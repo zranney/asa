@@ -19,20 +19,12 @@
                   <div class="owl-carousel-inline-wrap">
                     <div class="owl-carousel owl-carousel-inline" data-items="1" data-dots="false" data-nav="true" data-autoplay="true" data-autoplay-speed="3200" data-stage-padding="0" data-loop="true" data-margin="10" data-mouse-drag="false" data-touch-drag="false" data-nav-custom=".owl-carousel-navbar">
                       <!-- Post Inline-->
+                      @foreach($calendrier_event as $matchday)
                       <article class="post-inline">
-                        <time class="post-inline-time" datetime="2020">April 15, 2020</time>
-                        <p class="post-inline-title">Sportland vs Dream Team</p>
+                        <time class="post-inline-time" datetime="2020">{{$matchday->date}}</time>
+                        <p class="post-inline-title">{{$matchday->domicile}} vs {{$matchday->exterieur}}</p>
                       </article>
-                      <!-- Post Inline-->
-                      <article class="post-inline">
-                        <time class="post-inline-time" datetime="2020">April 15, 2020</time>
-                        <p class="post-inline-title">Sportland vs Real Madrid</p>
-                      </article>
-                      <!-- Post Inline-->
-                      <article class="post-inline">
-                        <time class="post-inline-time" datetime="2020">April 15, 2020</time>
-                        <p class="post-inline-title">Sportland vs Barcelona</p>
-                      </article>
+                      @endforeach
                     </div>
                   </div>
                 </div>
@@ -44,7 +36,6 @@
                     <select class="select select-inline" data-placeholder="Select an option" data-dropdown-class="select-inline-dropdown">
                       <option value="fr" selected="">fr</option>
                       <option value="en">en</option>
-                      <option value="es">es</option>
                     </select>
                   </li>
                   <li>
@@ -95,8 +86,8 @@
                       </article>
                     </div>
                   </li>
-                  <li><a class="link link-icon link-icon-left link-classic" href="#"><span class="icon fl-bigmug-line-login12"></span><span class="link-icon-text">Your Account</span></a></li>
-                </ul>
+{{--                   <li><a class="link link-icon link-icon-left link-classic" href="#"><span class="icon fl-bigmug-line-login12"></span><span class="link-icon-text">Your Account</span></a></li>
+ --}}                </ul>
               </div>
               <div class="rd-navbar-collapse-toggle rd-navbar-fixed-element-1" data-rd-navbar-toggle=".rd-navbar-collapse"><span></span></div>
             </div>
@@ -118,7 +109,7 @@
                   <button class="rd-navbar-search-toggle" data-rd-navbar-toggle=".rd-navbar-search"><span></span></button>
                   <form class="rd-search" action="#" data-search-live="rd-search-results-live" method="GET">
                     <div class="form-wrap">
-                      <label class="form-label" for="rd-navbar-search-form-input">Enter your search request here...</label>
+                      <label class="form-label" for="rd-navbar-search-form-input">Entrer votre recherche ici...</label>
                       <input class="rd-navbar-search-form-input form-input" id="rd-navbar-search-form-input" type="text" name="s" autocomplete="off">
                       <div class="rd-search-results-live" id="rd-search-results-live"></div>
                     </div>
@@ -131,22 +122,22 @@
               <div class="rd-navbar-main-container container">
                 <!-- RD Navbar Nav-->
                                   <ul class="rd-navbar-nav">
-                                    <li class="rd-nav-item active"><a class="rd-nav-link" href="/club">CLUB</a>
+                                    <li class="rd-nav-item {{ request()->is('/') ? 'active' : '' }}"><a class="rd-nav-link" href="/">Accueil</a>
                                     </li>
-                                    <li class="rd-nav-item"><a class="rd-nav-link" href="/equipe">EQUIPE</a>
+                                    <li class="rd-nav-item {{ request()->is('club') ? 'active' : '' }}"><a class="rd-nav-link" href="{{ url('/club') }}">CLUB</a>
                                     </li>
-                                    <li class="rd-nav-item"><a class="rd-nav-link" href="calendrier">CALENDRIER</a>
+                                    <li class="rd-nav-item {{ request()->is('equipe') ? 'active' : '' }}"><a class="rd-nav-link" href="/equipe">EQUIPE</a>
                                     </li>
-                                    <li class="rd-nav-item"><a class="rd-nav-link" href="/galerie">GALERIE</a>
+                                    <li class="rd-nav-item {{ request()->is('calendrier') ? 'active' : '' }}"><a class="rd-nav-link" href="calendrier">CALENDRIER</a>
                                     </li>
-                                    <li class="rd-nav-item"><a class="rd-nav-link" href="/contact">CONTACT</a>
+                                    <li class="rd-nav-item {{ request()->is('galerie') ? 'active' : '' }}"><a class="rd-nav-link" href="/galerie">GALERIE</a>
+                                    </li>
+                                    <li class="rd-nav-item {{ request()->is('contact') ? 'active' : '' }}"><a class="rd-nav-link" href="/contact">CONTACT</a>
                                     </li>
                                   </ul>
                 <div class="rd-navbar-main-element">
                   <ul class="list-inline list-inline-sm">
                     <li><a class="icon icon-xs icon-light fa fa-facebook" href="#"></a></li>
-                    <li><a class="icon icon-xs icon-light fa fa-twitter" href="#"></a></li>
-                    <li><a class="icon icon-xs icon-light fa fa-google-plus" href="#"></a></li>
                     <li><a class="icon icon-xs icon-light fa fa-instagram" href="#"></a></li>
                   </ul>
                 </div>

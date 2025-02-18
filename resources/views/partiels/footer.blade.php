@@ -2,26 +2,13 @@
 <footer class="section footer-classic footer-classic-dark context-dark">
     <div class="footer-classic-main">
       <div class="container">
-        <p class="heading-7">S'inscrire à notre Newsletter</p>
-        <!-- RD Mailform-->
-        <form class="rd-mailform rd-form rd-inline-form-creative" data-form-output="form-output-global" data-form-type="subscribe" method="post" action="bat/rd-mailform.php">
-          <div class="form-wrap">
-            <div class="form-input-wrap">
-              <input class="form-input" id="footer-form-email" type="email" name="email" required>
-              <label class="form-label" for="footer-form-email">Entrez votre E-mail</label>
-            </div>
-          </div>
-          <div class="form-button">
-            <button class="button button-primary-outline" type="submit" aria-label="Send"><span class="icon fl-budicons-launch-right164"></span></button>
-          </div>
-        </form>
         <div class="row row-50">
           <div class="col-lg-5 text-center text-sm-left">
             <article class="unit unit-sm-horizontal unit-middle justify-content-center justify-content-sm-start footer-classic-info">
               <div class="unit-left"><a class="brand brand-md" href="./"><img class="brand-logo " src="images/logo-soccer-default-95x126.png" alt="" width="95" height="126"/></a>
               </div>
               <div class="unit-body">
-                <p>Sportland website offers you the latest news about our team as well as updates on our matches and other events.</p>
+                <p>Le site de l'Association Sportive les Anges vous offre les dernières nouvelles par rapport à notre club, au match et à tous les autres évènements. </p>
               </div>
             </article>
             <ul class="list-inline list-inline-bordered list-inline-bordered-lg">
@@ -59,11 +46,9 @@
               <div class="group-item">
                 <ul class="list-inline list-inline-xs">
                   <li><a class="icon icon-corporate fa fa-facebook" href="#"></a></li>
-                  <li><a class="icon icon-corporate fa fa-twitter" href="#"></a></li>
-                  <li><a class="icon icon-corporate fa fa-google-plus" href="#"></a></li>
                   <li><a class="icon icon-corporate fa fa-instagram" href="#"></a></li>
                 </ul>
-              </div><a class="button button-sm button-gray-outline" href="contact-us.html">Get in Touch</a>
+              </div><a class="button button-sm button-gray-outline" href="contact-us.html">Nos réseaux</a>
             </div>
           </div>
           <div class="col-lg-7">
@@ -139,15 +124,13 @@
       <div class="container">
         <div class="layout-justify">
           <!-- Rights-->
-          <p class="rights"><span>Sportland</span><span>&nbsp;&copy;&nbsp;</span><span class="copyright-year"></span><span>.&nbsp;</span><span>Designed by <a href="https://www.templatemonster.com/products/author/zemez/">Zemez.</a></span></p>
+          <p class="rights"><span>Association Sportive les Anges</span><span>&nbsp;&copy;&nbsp;</span><span class="copyright-year"></span><span>.&nbsp;</span><span>Développé par <a href="https://www.sevyou.com">SEVYOU.</a></span></p>
           <nav class="nav-minimal">
             <ul class="nav-minimal-list">
-              <li class="active"><a href="index.html">Home</a></li>
-              <li><a href="#">Features</a></li>
-              <li><a href="#">Statistics</a></li>
-              <li><a href="#">Team</a></li>
-              <li><a href="#">News</a></li>
-              <li><a href="#">Shop</a></li>
+              <li class="active"><a href="index.html">Accueil</a></li>
+              <li><a href="#">Statisiques</a></li>
+              <li><a href="#">Nouveautés</a></li>
+              <li><a href="#">Boutique</a></li>
             </ul>
           </nav>
         </div>
