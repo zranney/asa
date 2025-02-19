@@ -24930,3 +24930,19 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 	display: flex;
 	height: 100px;
 }
+.highlight {
+    background-color: #eeec49; /* Choisis la couleur de surlignage que tu souhaites */
+}
+.highlight-red {
+    background-color: #ff4c39; /* Choisis la couleur rouge que tu souhaites */
+    color: white; /* Optionnel : change la couleur du texte pour le rendre lisible */
+}
+
+.post-future-text p {
+    transition: all 0.3s ease; /* Transition pour l'animation */
+}
+
+.post-future-text p.expanded {
+    font-size: 1.0em; /* Augmenter la taille de la police pour le contenu complet */
+    max-height: none; /* Retirer la restriction de hauteur */
+}

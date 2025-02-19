@@ -19,10 +19,10 @@
                   <div class="owl-carousel-inline-wrap">
                     <div class="owl-carousel owl-carousel-inline" data-items="1" data-dots="false" data-nav="true" data-autoplay="true" data-autoplay-speed="3200" data-stage-padding="0" data-loop="true" data-margin="10" data-mouse-drag="false" data-touch-drag="false" data-nav-custom=".owl-carousel-navbar">
                       <!-- Post Inline-->
-                      @foreach($calendrier_event as $matchday)
+                      @foreach($matchs as $matchday)
                       <article class="post-inline">
-                        <time class="post-inline-time" datetime="2020">{{$matchday->date}}</time>
-                        <p class="post-inline-title">{{$matchday->domicile}} vs {{$matchday->exterieur}}</p>
+                        <time class="post-inline-time" datetime="{{ \Carbon\Carbon::parse($matchday->date)->translatedFormat('d-m-Y') }}">{{ \Carbon\Carbon::parse($matchday->date)->translatedFormat('d-m-Y') }}</time>
+                        <p class="post-inline-title">{{$matchday->domicile->nom}} <span style="color:yellow;">vs</span> {{$matchday->exterieur->nom}}</p>
                       </article>
                       @endforeach
                     </div>

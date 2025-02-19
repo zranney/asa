@@ -56,221 +56,10 @@
       <div class="row row-50">
         <div class="col-lg-8">
           <div class="main-component">
-            <!-- Heading Component-->
-            <article class="heading-component">
-              <div class="heading-component-inner">
-                <h5 class="heading-component-title">Actualités
-                </h5><a class="button button-xs button-gray-outline" href="#">Tout voir</a>
-              </div>
-            </article>
-            <div class="row row-30">
-              <div class="col-md-6">
-                <!-- Post Future-->
-                <article class="post-future"><a class="post-future-figure" href="#"><img src="images/news-2-1-368x287.jpg" alt="" width="368" height="287"/></a>
-                  <div class="post-future-main">
-                    <h4 class="post-future-title"><a href="#">Sadio mane still makes a difference, sam wilson admits</a></h4>
-                    <div class="post-future-meta">
-                      <!-- Badge-->
-                      <div class="badge badge-secondary">The Team
-                      </div>
-                      <div class="post-future-time"><span class="icon mdi mdi-clock"></span>
-                        <time datetime="2020">April 15, 2020</time>
-                      </div>
-                    </div>
-                    <hr/>
-                    <div class="post-future-text">
-                      <p>Liverpool would love to welcome Philippe Coutinho back, but Sadio Mane is carrying...</p>
-                    </div>
-                    <div class="post-future-footer group-flex group-flex-xs"><a class="button button-gray-outline" href="#">Read more</a>
-                      <div class="post-future-share">
-                        <div class="inline-toggle-parent">
-                          <div class="inline-toggle icon material-icons-share"></div>
-                          <div class="inline-toggle-element">
-                            <ul class="list-inline">
-                              <li>Share</li>
-                              <li><a class="icon fa-facebook" href="#"></a></li>
-                              <li><a class="icon fa-twitter" href="#"></a></li>
-                              <li><a class="icon fa-google-plus" href="#"></a></li>
-                              <li><a class="icon fa-instagram" href="#"></a></li>
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </article>
-              </div>
-              <div class="col-md-6">
-                <!-- Post Future-->
-                <article class="post-future"><a class="post-future-figure" href="#"><img src="images/news-2-2-368x287.jpg" alt="" width="368" height="287"/></a>
-                  <div class="post-future-main">
-                    <h4 class="post-future-title"><a href="#">Robertson's decent debut at european cup 2020</a></h4>
-                    <div class="post-future-meta">
-                      <!-- Badge-->
-                      <div class="badge badge-secondary">The Team
-                      </div>
-                      <div class="post-future-time"><span class="icon mdi mdi-clock"></span>
-                        <time datetime="2020">April 15, 2020</time>
-                      </div>
-                    </div>
-                    <hr/>
-                    <div class="post-future-text">
-                      <p>Robertson, in his first Anfield outing as a Liverpool player, looked assured at left-back...</p>
-                    </div>
-                    <div class="post-future-footer group-flex group-flex-xs"><a class="button button-gray-outline" href="#">Read more</a>
-                      <div class="post-future-share">
-                        <div class="inline-toggle-parent">
-                          <div class="inline-toggle icon material-icons-share"></div>
-                          <div class="inline-toggle-element">
-                            <ul class="list-inline">
-                              <li>Share</li>
-                              <li><a class="icon fa-facebook" href="#"></a></li>
-                              <li><a class="icon fa-twitter" href="#"></a></li>
-                              <li><a class="icon fa-google-plus" href="#"></a></li>
-                              <li><a class="icon fa-instagram" href="#"></a></li>
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </article>
-              </div>
-              <div class="col-md-6">
-                <!-- Post Future-->
-                <article class="post-future"><a class="post-future-figure" href="#"><img src="images/news-2-3-368x287.jpg" alt="" width="368" height="287"/></a>
-                  <div class="post-future-main">
-                    <h4 class="post-future-title"><a href="#">Pochettino and ‘gaffer’s son’ Rose estranged – reports</a></h4>
-                    <div class="post-future-meta">
-                      <!-- Badge-->
-                      <div class="badge badge-secondary">The Team
-                      </div>
-                      <div class="post-future-time"><span class="icon mdi mdi-clock"></span>
-                        <time datetime="2020">April 15, 2020</time>
-                      </div>
-                    </div>
-                    <hr/>
-                    <div class="post-future-text">
-                      <p>Danny Rose and Mauricio Pochettino were once so close that he was nicknamed “the gaffer’s...</p>
-                    </div>
-                    <div class="post-future-footer group-flex group-flex-xs"><a class="button button-gray-outline" href="#">Read more</a>
-                      <div class="post-future-share">
-                        <div class="inline-toggle-parent">
-                          <div class="inline-toggle icon material-icons-share"></div>
-                          <div class="inline-toggle-element">
-                            <ul class="list-inline">
-                              <li>Share</li>
-                              <li><a class="icon fa-facebook" href="#"></a></li>
-                              <li><a class="icon fa-twitter" href="#"></a></li>
-                              <li><a class="icon fa-google-plus" href="#"></a></li>
-                              <li><a class="icon fa-instagram" href="#"></a></li>
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </article>
-              </div>
-              <div class="col-md-6">
-                <!-- Post Future-->
-                <article class="post-future"><a class="post-future-figure" href="#"><img src="images/news-2-4-368x287.jpg" alt="" width="368" height="287"/></a>
-                  <div class="post-future-main">
-                    <h4 class="post-future-title"><a href="#">Coutinho’s camp: It was all Barca’s fault and we can prove it</a></h4>
-                    <div class="post-future-meta">
-                      <!-- Badge-->
-                      <div class="badge badge-secondary">The Team
-                      </div>
-                      <div class="post-future-time"><span class="icon mdi mdi-clock"></span>
-                        <time datetime="2020">April 15, 2020</time>
-                      </div>
-                    </div>
-                    <hr/>
-                    <div class="post-future-text">
-                      <p>Philippe Coutinho is reportedly seeking clear-the-air talks with Liverpool after...</p>
-                    </div>
-                    <div class="post-future-footer group-flex group-flex-xs"><a class="button button-gray-outline" href="#">Read more</a>
-                      <div class="post-future-share">
-                        <div class="inline-toggle-parent">
-                          <div class="inline-toggle icon material-icons-share"></div>
-                          <div class="inline-toggle-element">
-                            <ul class="list-inline">
-                              <li>Share</li>
-                              <li><a class="icon fa-facebook" href="#"></a></li>
-                              <li><a class="icon fa-twitter" href="#"></a></li>
-                              <li><a class="icon fa-google-plus" href="#"></a></li>
-                              <li><a class="icon fa-instagram" href="#"></a></li>
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </article>
-              </div>
-              <div class="col-md-12">
-                <!-- Swiper-->
-                <div class="swiper-container swiper-slider post-slider" data-loop="false" data-autoplay="false" data-simulate-touch="false">
-                  <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                      <div class="swiper-slide-caption">
-                                            <!-- Post Alice-->
-                                            <article class="post-alice"><img src="images/post-slide-1-769x397.jpg" alt="" width="769" height="397"/>
-                                              <div class="post-alice-main">
-                                                <!-- Badge-->
-                                                <div class="badge badge-secondary">the team
-                                                </div>
-                                                <h3 class="post-alice-title"><a href="#">Lewis named AIG MCAA Sevens head coach</a></h3>
-                                                <div class="divider"></div>
-                                                <div class="post-alice-time"><span class="icon mdi mdi-clock"></span>
-                                                  <time datetime="2020">April 15, 2020</time>
-                                                </div>
-                                              </div>
-                                            </article>
-                      </div>
-                    </div>
-                    <div class="swiper-slide">
-                      <div class="swiper-slide-caption">
-                                            <!-- Post Alice-->
-                                            <article class="post-alice"><img src="images/post-slide-2-769x397.jpg" alt="" width="769" height="397"/>
-                                              <div class="post-alice-main">
-                                                <!-- Badge-->
-                                                <div class="badge badge-primary">The League
-                                                </div>
-                                                <h3 class="post-alice-title"><a href="#">rumors about world soccer championship 2020</a></h3>
-                                                <div class="divider"></div>
-                                                <div class="post-alice-time"><span class="icon mdi mdi-clock"></span>
-                                                  <time datetime="2020">April 15, 2020</time>
-                                                </div>
-                                              </div>
-                                            </article>
-                      </div>
-                    </div>
-                    <div class="swiper-slide">
-                      <div class="swiper-slide-caption">
-                                            <!-- Post Alice-->
-                                            <article class="post-alice"><img src="images/post-slide-3-769x397.jpg" alt="" width="769" height="397"/>
-                                              <div class="post-alice-main">
-                                                <!-- Post Video Button--><a class="post-video-button" href="#modal1" data-toggle="modal"><span class="icon material-icons-play_arrow"></span></a>
-                                                <h3 class="post-alice-title"><a href="#">2020 Europa League Final</a></h3>
-                                                <div class="divider"></div>
-                                                <div class="post-alice-time"><span class="icon mdi mdi-clock"></span>
-                                                  <time datetime="2020">April 15, 2020</time>
-                                                </div>
-                                              </div>
-                                            </article>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- Swiper Pagination-->
-                  <div class="swiper-pagination"></div>
-                  <!-- Swiper Navigation-->
-                  <div class="swiper-button-prev"></div>
-                  <div class="swiper-button-next"></div>
-                </div>
-              </div>
-            </div>
+
+            @include('partiels.actualites', ['actualites' => $actualites])
           </div>
+
           <div class="main-component">
             <!-- Heading Component-->
             <article class="heading-component">
@@ -279,23 +68,30 @@
                 </h5><a class="button button-xs button-gray-outline" href="/calendrier">Calendrier</a>
               </div>
             </article>
+            @if ($matchs->count() > 0)
             <!-- Game Result Bug-->
             <article class="game-result">
               <div class="game-info game-info-creative">
-                <p class="game-info-subtitle">Stade Robert Champroux - 
-                  <time datetime="08:30"> 15:30 </time>
+                <p class="game-info-subtitle">{{ $matchs[0]->lieu }} - 
+                  <time datetime="{{ $matchs[0]->heure }}">
+                    {{ \Carbon\Carbon::parse($matchs[0]->heure)->format('H\hi') }}
+                </time>
                 </p>
-                <h3 class="game-info-title">National 2 - Journée 3</h3>
+                <h3 class="game-info-title">{{ $matchs[0]->titre }}</h3>
                 <div class="game-info-main">
                   <div class="game-info-team game-info-team-first">
                     <figure><img src="images/team-sportland-75x99.png" alt="" width="75" height="99"/>
                     </figure>
-                    <div class="game-result-team-name">ASA</div>
-                    <div class="game-result-team-country">Abidjan</div>
+                    <div class="game-result-team-name">{{ $matchs[0]->domicile->nom }}</div>
+                    {{-- <div class="game-result-team-country">Abidjan</div> --}}
                   </div>
                   <div class="game-info-middle game-info-middle-vertical">
-                    <time class="time-big" datetime="2020-04-17"><span class="heading-3">Sam 15</span> Février 2025
-                    </time>
+                    <time class="time-big" datetime="{{ \Carbon\Carbon::parse($matchs[0]->date)->format('Y-m-d') }}">
+                      <span class="heading-3">
+                          {{ ucfirst(\Carbon\Carbon::parse($matchs[0]->date)->translatedFormat('D d')) }}
+                      </span> 
+                      {{ \Carbon\Carbon::parse($matchs[0]->date)->translatedFormat('F Y') }}
+                  </time>
                     <div class="game-result-divider-wrap"><span class="game-info-team-divider">VS</span></div>
                     <div class="group-sm">
                       <a class="button button-sm button-primary" href="#">Achetez vos tickets</a>
@@ -304,223 +100,24 @@
                   <div class="game-info-team game-info-team-second">
                     <figure><img src="images/team-dream-team-91x91.png" alt="" width="91" height="91"/>
                     </figure>
-                    <div class="game-result-team-name">Dream Team</div>
-                    <div class="game-result-team-country">San-Pédro</div>
+                    <div class="game-result-team-name">{{ $matchs[0]->exterieur->nom }}</div>
+                    {{-- <div class="game-result-team-country">San-Pédro</div> --}}
                   </div>
                 </div>
               </div>
               <div class="game-info-countdown">
-                <div class="countdown countdown-bordered" data-type="until" data-time="15 Feb 2025 15:30" data-format="dhms" data-style="short"></div>
+                <div class="countdown countdown-bordered" data-type="until" data-time="{{ $matchs[0]->date }}" data-format="dhms" data-style="short"></div>
               </div>
             </article>
           </div>
         </div>
+        @endif
         <!-- Aside Block-->
         <div class="col-lg-4">
           <aside class="aside-components">
-            <div class="aside-component">
-              <div class="owl-carousel-outer-navigation-1">
-                <!-- Heading Component-->
-                <article class="heading-component">
-                  <div class="heading-component-inner">
-                    <h5 class="heading-component-title">Derniers résultats
-                    </h5>
-                    <div class="owl-carousel-arrows-outline">
-                      <div class="owl-nav">
-                        <button class="owl-arrow owl-arrow-prev"></button>
-                        <button class="owl-arrow owl-arrow-next"></button>
-                      </div>
-                    </div>
-                  </div>
-                </article>
-                <!-- Owl Carousel-->
-                <div class="owl-carousel owl-spacing-1" data-items="1" data-dots="false" data-nav="true" data-autoplay="true" data-autoplay-speed="4000" data-stage-padding="0" data-loop="true" data-margin="30" data-mouse-drag="false" data-animation-in="fadeIn" data-animation-out="fadeOut" data-nav-custom=".owl-carousel-outer-navigation-1">
-                  <!-- Game Result Creative-->
-                  <article class="game-result game-result-creative">
-                    <div class="game-result-main-vertical">
-                      <div class="game-result-team game-result-team-horizontal game-result-team-first">
-                        <figure class="game-result-team-figure"><img src="images/team-sportland-31x41.png" alt="" width="31" height="41"/>
-                        </figure>
-                        <div class="game-result-team-title">
-                          <div class="game-result-team-name">Sportland</div>
-                          <div class="game-result-team-country">Los angeles</div>
-                        </div>
-                        <div class="game-result-score game-result-score-big game-result-team-win">2<span class="game-result-team-label game-result-team-label-right">Win</span>
-                        </div>
-                      </div><span class="game-result-team-divider">VS</span>
-                      <div class="game-result-team game-result-team-horizontal game-result-team-second">
-                        <figure class="game-result-team-figure"><img src="images/team-fenix-40x32.png" alt="" width="40" height="32"/>
-                        </figure>
-                        <div class="game-result-team-title">
-                          <div class="game-result-team-name">Real madrid</div>
-                          <div class="game-result-team-country">Spain</div>
-                        </div>
-                        <div class="game-result-score game-result-score-big">1
-                        </div>
-                      </div>
-                    </div>
-                    <div class="game-result-footer">
-                      <ul class="game-result-details">
-                        <li>Home</li>
-                        <li>New Yorkers Stadium</li>
-                        <li>
-                          <time datetime="2020-04-14">April 14, 2020</time>
-                        </li>
-                      </ul>
-                    </div>
-                  </article>
-                  <!-- Game Result Creative-->
-                  <article class="game-result game-result-creative">
-                    <div class="game-result-main-vertical">
-                      <div class="game-result-team game-result-team-horizontal game-result-team-first">
-                        <figure class="game-result-team-figure"><img src="images/team-bavaria-fc-26x34.png" alt="" width="26" height="34"/>
-                        </figure>
-                        <div class="game-result-team-title">
-                          <div class="game-result-team-name">Bavaria FC</div>
-                          <div class="game-result-team-country">Germany</div>
-                        </div>
-                        <div class="game-result-score game-result-score-big">2
-                        </div>
-                      </div><span class="game-result-team-divider">VS</span>
-                      <div class="game-result-team game-result-team-horizontal game-result-team-second">
-                        <figure class="game-result-team-figure"><img src="images/team-athletic-33x30.png" alt="" width="33" height="30"/>
-                        </figure>
-                        <div class="game-result-team-title">
-                          <div class="game-result-team-name">Atletico</div>
-                          <div class="game-result-team-country">USA</div>
-                        </div>
-                        <div class="game-result-score game-result-score-big game-result-team-win">3<span class="game-result-team-label game-result-team-label-right">Win</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="game-result-footer">
-                      <ul class="game-result-details">
-                        <li>Away</li>
-                        <li>Bavaria Stadium</li>
-                        <li>
-                          <time datetime="2020-04-14">April 14, 2020</time>
-                        </li>
-                      </ul>
-                    </div>
-                  </article>
-                </div>
-              </div>
-            </div>
-            <div class="aside-component">
-              <!-- Heading Component-->
-              <article class="heading-component">
-                <div class="heading-component-inner">
-                  <h5 class="heading-component-title">Classement
-                  {{-- </h5><a class="button button-xs button-gray-outline" href="#">Tout voir</a> --}}
-                </div>
-              </article>
-              <!-- Table team-->
-              <div class="table-custom-responsive">
-                <table class="table-custom table-standings table-classic">
-                  <thead>
-                    <tr>
-                      <th colspan="2">Position</th>
-                      <th>V</th>
-                      <th>N</th>
-                      <th>D</th>
-                      <th>PTS</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td><span>1</span></td>
-                      <td class="team-inline">
-                        <div class="team-figure"><img src="images/team-sportland-31x41.png" alt="" width="31" height="41"/>
-                        </div>
-                        <div class="team-title">
-                          <div class="team-name">Sportland</div>
-                          <div class="team-country">USA</div>
-                        </div>
-                      </td>
-                      <td>153</td>
-                      <td>30</td>
-                      <td>30</td>
-                      <td>186</td>
-                    </tr>
-                    <tr>
-                      <td><span>2</span></td>
-                      <td class="team-inline">
-                        <div class="team-figure"><img src="images/team-dream-team-34x34.png" alt="" width="34" height="34"/>
-                        </div>
-                        <div class="team-title">
-                          <div class="team-name">Dream team</div>
-                          <div class="team-country">Spain</div>
-                        </div>
-                      </td>
-                      <td>120</td>
-                      <td>30</td>
-                      <td>30</td>
-                      <td>186</td>
-                    </tr>
-                    <tr>
-                      <td><span>3</span></td>
-                      <td class="team-inline">
-                        <div class="team-figure"><img src="images/team-real-madrid-28x37.png" alt="" width="28" height="37"/>
-                        </div>
-                        <div class="team-title">
-                          <div class="team-name">Real Madrid</div>
-                          <div class="team-country">Spain</div>
-                        </div>
-                      </td>
-                      <td>100</td>
-                      <td>30</td>
-                      <td>30</td>
-                      <td>186</td>
-                    </tr>
-                    <tr>
-                      <td><span>4</span></td>
-                      <td class="team-inline">
-                        <div class="team-figure"><img src="images/team-celta-vigo-35x39.png" alt="" width="35" height="39"/>
-                        </div>
-                        <div class="team-title">
-                          <div class="team-name">Celta Vigo</div>
-                          <div class="team-country">Italy</div>
-                        </div>
-                      </td>
-                      <td>98</td>
-                      <td>30</td>
-                      <td>30</td>
-                      <td>186</td>
-                    </tr>
-                    <tr>
-                      <td><span>5</span></td>
-                      <td class="team-inline">
-                        <div class="team-figure"><img src="images/team-barcelona-30x35.png" alt="" width="30" height="35"/>
-                        </div>
-                        <div class="team-title">
-                          <div class="team-name">Barcelona</div>
-                          <div class="team-country">Spain</div>
-                        </div>
-                      </td>
-                      <td>98</td>
-                      <td>30</td>
-                      <td>30</td>
-                      <td>186</td>
-                    </tr>
-                    <tr>
-                      <td><span>6</span></td>
-                      <td class="team-inline">
-                        <div class="team-figure"><img src="images/team-bavaria-fc-26x34.png" alt="" width="26" height="34"/>
-                        </div>
-                        <div class="team-title">
-                          <div class="team-name">Bavaria FC</div>
-                          <div class="team-country">Germany</div>
-                        </div>
-                      </td>
-                      <td>98</td>
-                      <td>30</td>
-                      <td>30</td>
-                      <td>186</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
+            
+            @include('partiels.resultats', ['rencontres' => $classements])
+            @include('partiels.classement', ['classements' => $classements])
             <div class="aside-component">
               <!-- Heading Component-->
               <article class="heading-component">

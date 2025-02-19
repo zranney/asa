@@ -1,13 +1,16 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Models\Actualite;
 use App\Models\Calendrier_event;
-use Illuminate\Http\Request;
 use App\Models\Classement;
 use App\Models\Equipe;
 use App\Models\MatchEvent;
-use Carbon\Carbon;
-class CalendrierController extends Controller
+use App\Models\Rencontre;
+use Illuminate\Http\Request;
+
+class HomeController extends Controller
 {
     //
     public function index(){
@@ -15,8 +18,6 @@ class CalendrierController extends Controller
 
         // Récupérer toutes les équipes
         $equipes = Equipe::with('classement')->get();
-
-        // Construire le classement avec initialisation à 0 si besoin
         $classements = $equipes->map(function ($equipe) {
             return [
                 'nom' => $equipe->nom,
@@ -30,8 +31,6 @@ class CalendrierController extends Controller
                 'perdus' => $equipe->classement->perdus ?? 0,
             ];
         });
-
-        // Trier selon les critères demandés
         $classements = $classements->sort(function ($a, $b) {
             // D'abord, trier par points (ordre décroissant)
             if ($a['points'] !== $b['points']) {
@@ -46,14 +45,19 @@ class CalendrierController extends Controller
             // Enfin, trier par ordre alphabétique (ordre croissant)
             return strcmp($a['nom'], $b['nom']);
         })->values();
+
+        $matchs = MatchEvent::all();
+        $rencontres = Rencontre::with(['equipe1', 'equipe2'])->get();
+        $actualites = Actualite::orderBy('date_publication', 'desc')->get();
+
         
-        $matchs = MatchEvent::with(['domicile', 'exterieur'])
-                    ->orderBy('date', 'desc')
-                    ->orderBy('heure', 'desc')
-                    ->get();
 
-                   
-
-        return view('calendrier', compact('calendrier_event', 'classements', 'matchs'));
+    return view('welcome', compact('classements', 'equipes', 'matchs', 'rencontres', 'actualites')); // Passer la variable à la vue
     }
+
+    public function getActualite($id)
+{
+    $actualite = Actualite::findOrFail($id);
+    return response()->json($actualite);
+}
 }
