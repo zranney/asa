@@ -27,11 +27,11 @@
                 <div class="post-future-text">
                     <!-- Texte tronqué -->
                     <p class="actualite-content" id="contenu-{{$actualite->id}}">
-                        {{ strlen($actualite->contenu) > 50 ? substr($actualite->contenu, 0, 50) . '...' : $actualite->contenu }}
+                        {{ strlen($actualite->contenu) > 80 ? substr($actualite->contenu, 0, 80) . '...' : $actualite->contenu }}
                     </p>
 
                     <!-- Boutons -->
-                    @if(strlen($actualite->contenu) > 50)
+                    @if(strlen($actualite->contenu) > 80)
                         <button class="button button-gray-outline" onclick="showFullContent({{ $actualite->id }})" id="btn-lire-plus-{{$actualite->id}}">
                             Lire plus
                         </button>
@@ -58,7 +58,7 @@
 
     function hideFullContent(id) {
         let content = actualites[id];
-        let truncated = content.length > 10 ? content.substring(0, 50) + '...' : content;
+        let truncated = content.length > 10 ? content.substring(0, 80) + '...' : content;
         
         document.getElementById('contenu-' + id).innerText = truncated;
         document.getElementById('btn-lire-plus-' + id).style.display = 'inline-block';
@@ -128,5 +128,5 @@
         <div class="swiper-button-next"></div>
       </div>
     </div>
-  </div>
+  
  

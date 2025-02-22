@@ -1,77 +1,52 @@
 @extends('./layouts/app')
 
-@section('title', 'ASA - Accueil')
-
-
+@section('title', 'ASA - Equipe')
 @section('content')
+<div class="container effectif-container">
+  <div class="effectif-header">
+    <h2 class="text-center">
+        <i class="fas fa-users"></i> Effectif de l'Équipe
+    </h2>
+    <div class="underline"></div>
+</div>
 
-<section class="section section-md bg-gray-100">
-    <div class="container">
-      <div class="row row-50">
-        <div>
-          <div class="main-component">
-            <!-- Heading Component-->
-            <article class="heading-component">
-              <div class="heading-component-inner">
-                <h5 class="heading-component-title">Notre équipe </h5>
-              </div>
-            </article>
-            <div><h5>Gardiens</h5> 
-                <div>
-                <ul class="equipe">
-                    <li> <img src="images/joueurs/gardien.jpg" alt="image du gardien numéro 1" width="200px" height="70px"></li>
-                    <li> <img src="images/joueurs/gardien.jpg" alt="image du gardien numéro 2" width="200px" height="70px"></li>
-                    <li> <img src="images/joueurs/gardien.jpg" alt="image du gardien numéro 3" width="200px" height="70px"></li>
-                </ul>
+
+    @foreach ($categories as $poste => $joueurs)
+        @if ($joueurs->count() > 0)
+        <div class="poste-section">
+          <h3 class="poste-titre">
+            <i class="{{ App\Http\Controllers\JoueurController::getPosteIcon($poste) }}"></i> 
+            {{ $poste }}
+        </h3>
+        
+
+            <div class="effectif-slider">
+                <button class="slide-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+                
+                <div class="player-wrapper">
+                    <div class="player-list">
+                        @foreach ($joueurs as $joueur)
+                        <div class="player-card">
+                          <img src="{{ asset('storage/'. $joueur->photo) }}" alt="{{ $joueur->nom }} {{ $joueur->prenom }}">
+                          <div class="player-info">
+                              <h5>{{ $joueur->numero }}</h5>
+                              <div class="player-name">
+                                  <h6>{{ $joueur->prenom }}</h6>
+                                  <h4>{{ $joueur->nom }}</h4>
+                              </div>
+                          </div>
+                      </div>
+                        @endforeach
+                    </div>
                 </div>
+                
+                <button class="slide-btn next-btn"><i class="fas fa-chevron-right"></i></button>
             </div>
-            <div><h5>Défenseurs</h5>
-                <div>
-                <ul class="equipe">
-                    <li> <img src="images/joueurs/milieu.jpg" alt="image du milieu numéro 1" width="200px" height="70px"></li>
-                    <li> <img src="images/joueurs/milieu.jpg" alt="image du milieu numéro 2" width="200px" height="70px"></li>
-                    <li> <img src="images/joueurs/milieu.jpg" alt="image du milieu numéro 3" width="200px" height="70px"></li>
-                    <li> <img src="images/joueurs/milieu.jpg" alt="image du milieu numéro 4" width="200px" height="70px"></li>
-                    <li> <img src="images/joueurs/milieu.jpg" alt="image du milieu numéro 5" width="200px" height="70px"></li>
-                    <li> <img src="images/joueurs/milieu.jpg" alt="image du milieu numéro 6" width="200px" height="70px"></li>
-                    <li> <img src="images/joueurs/milieu.jpg" alt="image du milieu numéro 7" width="200px" height="70px"></li>
-                </ul>
-                </div>
-            </div>
-            <div><h5>Milieux</h5> 
-                <div>
-                <ul class="equipe">
-                    <li> <img src="images/joueurs/attaquant.jpg" alt="image du attaquant numéro 1" width="200px" height="70px"></li>
-                    <li> <img src="images/joueurs/attaquant.jpg" alt="image du attaquant numéro 2" width="200px" height="70px"></li>
-                    <li> <img src="images/joueurs/attaquant.jpg" alt="image du attaquant numéro 3" width="200px" height="70px"></li>
-                    <li> <img src="images/joueurs/attaquant.jpg" alt="image du attaquant numéro 4" width="200px" height="70px"></li>
-                    <li> <img src="images/joueurs/attaquant.jpg" alt="image du attaquant numéro 5" width="200px" height="70px"></li>
-                    <li> <img src="images/joueurs/attaquant.jpg" alt="image du attaquant numéro 6" width="200px" height="70px"></li>
-                </ul>
-                </div>
-            </div>
-            <div><h5>Attaquants</h5> 
-                <div>
-                <ul>
-                    <li>Guillaume</li>
-                    <li>Adabe</li>
-                    <li>Loïc</li>
-                </ul>
-                </div>
-            </div>
-            <div><h5>Coachs</h5> 
-                <div>
-                <ul>
-                    <li>Guillaume</li>
-                    <li>Adabe</li>
-                    <li>Loïc</li>
-                </ul>
-                </div>
-            </div>
-          </div>
         </div>
-      </div>
-    </div>
-</section>
-
+        @endif
+    @endforeach
+</div>
 @endsection
+<script src="{{ asset('js/swiper-init.js') }}"></script>
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>

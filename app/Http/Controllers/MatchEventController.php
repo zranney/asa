@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\MatchEvent;
 use App\Models\Equipe;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
 
 class MatchEventController extends Controller
 {
@@ -35,7 +36,9 @@ class MatchEventController extends Controller
         ]);
 
         // Récupérer tous les matchs
-        $matchs = MatchEvent::all();
+        $matchs = MatchEvent::where('date', '>=', Carbon::now()) // Prendre seulement les matchs futurs
+        ->orderBy('date', 'asc') // Trier par date la plus proche en premier
+        ->get();
 
         return redirect()->route('calendrier', compact('matchs'))->with('success', 'Match enregistré avec succès !');
     }

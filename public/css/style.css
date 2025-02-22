@@ -4,6 +4,7 @@
 * Trunk version 2.0.0
 *
 */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;700&display=swap');
 a:focus,
 button:focus {
 	outline: none !important;
@@ -15628,7 +15629,7 @@ html.tablet .ui-to-top {
 }
 
 .rd-navbar-darker {
-	background: #2c2d31;
+	background: linear-gradient(to right, #28a745, #f1c40f); /* Couleur du background nav */
 }
 
 /*
@@ -15689,7 +15690,8 @@ html.tablet .ui-to-top {
 }
 
 .rd-navbar-static .rd-nav-item + .rd-nav-item {
-	margin-left: 47px;
+	margin:0;
+	padding: 0 25px;
 }
 
 .rd-navbar-static .rd-nav-link {
@@ -16061,6 +16063,7 @@ html.tablet .ui-to-top {
 	align-items: center;
 	height: 56px;
 	padding: 5px;
+	width: 1500px !important;
 }
 
 .rd-navbar-fixed .rd-navbar-panel-inner {
@@ -17063,8 +17066,7 @@ html.rd-navbar-fixed-linked .page {
 
 .rd-navbar-classic .rd-navbar-list-link {
 	display: block;
-	max-width: 80px;
-	opacity: .15;
+	max-width: 80px;	
 }
 
 .rd-navbar-classic .rd-navbar-list-link:hover {
@@ -17121,23 +17123,17 @@ html.rd-navbar-fixed-linked .page {
 .rd-navbar-classic.rd-navbar-static .rd-navbar-panel-item-left {
 	display: block;
 	flex-direction: column;
-	padding-right: 20px;
+	padding-left: 30px;
 }
 
-.rd-navbar-classic.rd-navbar-static .rd-navbar-panel-item-left::before {
-	right: 0;
-	transform: skew(-30deg);
-}
+
 
 .rd-navbar-classic.rd-navbar-static .rd-navbar-panel-item-right {
 	justify-content: flex-end;
 	padding-left: 20px;
 }
 
-.rd-navbar-classic.rd-navbar-static .rd-navbar-panel-item-right::before {
-	left: 0;
-	transform: skew(30deg);
-}
+
 
 .rd-navbar-classic.rd-navbar-static .owl-carousel-inline-outer {
 	overflow: hidden;
@@ -17191,7 +17187,7 @@ html.rd-navbar-fixed-linked .page {
 }
 
 .rd-navbar-classic.rd-navbar-static .rd-navbar-list-item + .rd-navbar-list-item {
-	margin-left: 44px;
+	margin-left: 10px;
 }
 
 .rd-navbar-classic.rd-navbar-static .rd-search {
@@ -17218,9 +17214,7 @@ html.rd-navbar-fixed-linked .page {
 	.rd-navbar-classic.rd-navbar-static .rd-navbar-main-top {
 		padding: 20px 0;
 	}
-	.rd-navbar-classic.rd-navbar-static .rd-navbar-list-item + .rd-navbar-list-item {
-		margin-left: 65px;
-	}
+	
 }
 
 .rd-navbar-classic.rd-navbar-static.rd-navbar--is-stuck, .rd-navbar-classic.rd-navbar-static.rd-navbar--is-clone {
@@ -22499,7 +22493,7 @@ html:not(.ie-11):not(.ie-10) .countdown-circle {
 
 .owl-carousel-inline-outer .owl-inline-nav {
 	position: absolute;
-	top: 2px;
+	top: 10px;
 	left: 0;
 	font-size: 16px;
 	line-height: 1.3;
@@ -22551,7 +22545,7 @@ html:not(.ie-11):not(.ie-10) .countdown-circle {
 }
 
 .owl-carousel-inline-outer .owl-carousel {
-	top: 5px;
+	top: 12px;
 }
 
 .owl-carousel-inline-outer * + .owl-arrow {
@@ -24928,7 +24922,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 
 .rd-navbar-main-container.container {
 	display: flex;
-	height: 100px;
+	height: 71px; /* Height de nav */
 }
 .highlight {
     background-color: #eeec49; /* Choisis la couleur de surlignage que tu souhaites */
@@ -24945,4 +24939,462 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 .post-future-text p.expanded {
     font-size: 1.0em; /* Augmenter la taille de la police pour le contenu complet */
     max-height: none; /* Retirer la restriction de hauteur */
+}
+footer {
+    background-color: black; /* Fond noir */
+}
+
+a.link-hover-style-1 {
+    color: #28a745; /* Vert */
+    font-size: 14px; /* Taille du texte par défaut */
+    transition: all 0.4s ease; /* Transition pour le changement */
+    text-decoration: none; /* Pas de soulignement par défaut */
+}
+
+a.link-hover-style-1:hover {
+    color: #ffc107; /* Jaune au survol */
+	font-size: 16px;
+    transform: scale(1.1); /* Grossir au survol */
+    text-decoration: none; /* Pas de soulignement au survol */
+}
+.arrow-green {
+	color: #ffeb3b; /* Jaune pour les flèches */
+}
+.effectif-slider {
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.player-wrapper {
+    overflow: hidden;
+    width: 100%;
+    max-width: 1400px; /* Ajuste selon ton design */
+}
+
+.player-list {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    gap: 10px;
+	margin-top: 10px;
+    will-change: transform;
+}
+
+
+.slide-btn {
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.3s;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+
+.slide-btn:hover {
+    background: black;
+}
+
+.prev-btn {
+    left: 10px;
+    display: none; /* Caché au début */
+}
+
+.next-btn {
+    right: 10px;
+    display: none; /* S'affiche si nécessaire */
+}
+/* Centrage des titres des catégories */
+.effectif-category {
+    text-align: center; /* Centre le texte */
+    font-size: 24px; /* Augmente la taille */
+    font-weight: bold;
+    margin: 40px 0 20px; /* Espacement haut et bas */
+}
+
+/* Ajout d'espace entre les joueurs */
+.player-card {
+    flex: 0 0 auto;
+    width: 280px;
+	height: 350px;
+    text-align: center;
+    background: #fff;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 20px 10px; /* Ajoute de l'espace en haut et en bas */
+}
+
+/* Ajustement de l'espacement entre les blocs */
+.effectif-slider {
+    margin-bottom: 50px; /* Ajoute de l'espace sous chaque bloc de joueurs */
+	width: 100%;
+}
+.effectif-container {
+    max-width: 1500px !important;
+    margin: 0 auto; /* Pour centrer le conteneur */
+}
+/* Effet spécial au survol des cartes des joueurs */
+.player-card {
+    position: relative;
+    transition: transform 0.6s ease, box-shadow 0.6s ease;
+}
+
+.player-card:hover {
+    transform: scale(1.05); /* Légère augmentation de la taille */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Ombre plus marquée */
+}
+
+/* Effet lumineux autour de la carte */
+.player-card::before {
+    content: "";
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    z-index: -1;
+}
+
+.player-card:hover::before {
+    opacity: 1;
+}
+/* Style du prénom */
+.player-card h5 {
+	margin-top: 12px;
+    font-size: 18px;
+    font-weight: 500;
+    color: #666;
+    margin-bottom: 5px;
+    letter-spacing: 1px;
+}
+
+/* Style du nom */
+.player-card h4 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #222;
+    letter-spacing: 2px;
+    transition: color 0.5s ease;
+}
+
+/* Effet spécial au survol */
+.player-card:hover .player-info h5 {
+    color: #28a745; /* Vert dynamique */
+	transition: color 1.0s ease;
+}
+
+/* Adapter la carte pour afficher l'image en fond */
+.player-card {
+    position: relative;
+    flex: 0 0 auto;
+    width: 280px;
+    height: 350px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 30px 10px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+}
+
+/* Image du joueur en full cover */
+.player-card img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Conteneur du texte en bas à gauche */
+.player-info {
+	font-family: 'Oswald', sans-serif;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    padding: 8px 12px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+}
+
+/* Numéro du joueur en gros */
+.player-info h5:first-child {
+	font-family: 'Oswald', sans-serif;
+    font-size: 50px; /* Taille plus grande */
+    font-weight: bold;
+    color: white;
+    margin-right: 10px;
+}
+
+/* Nom et prénom alignés à droite du numéro */
+.player-name {
+	margin-top: 11px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Style du prénom */
+.player-name h6 {
+	font-family: 'Oswald', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: white;
+    margin: 0;
+}
+
+/* Style du nom */
+.player-name h4 {
+	font-family: 'Oswald', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    margin: 0;
+    letter-spacing: 1px;
+}
+.effectif-header {
+    text-align: center;
+    margin: 40px 0;
+    position: relative;
+}
+
+.effectif-header h2 {
+    font-size: 32px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    display: inline-block;
+    position: relative;
+    color: #222; /* Couleur principale */
+	
+    transition: color 0.3s ease-in-out;
+    font-family: 'Poppins', sans-serif;
+}
+
+.effectif-header h2 i {
+    color: #28a745; /* Vert dynamique */
+    margin-right: 10px;
+}
+
+.effectif-header .underline {
+    width: 120px;
+    height: 4px;
+    background: linear-gradient(to right, #28a745, #f1c40f); /* Dégradé vert-jaune */
+    margin: 8px auto 0;
+    border-radius: 2px;
+}
+
+/* Effet au survol */
+.effectif-header h2:hover {
+    color: #28a745;
+}
+.poste-titre {
+    font-size: 26px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* Espacement entre l'icône et le texte */
+    color: #444;
+    transition: color 0.3s ease-in-out;
+}
+
+.poste-titre i {
+    font-size: 28px;
+    color: #28a745; /* Couleur des icônes */
+}
+
+.poste-titre:hover {
+    color: #28a745;
+}
+@media (max-width: 768px) {
+    .player-card {
+        width: 80px;  /* Réduction de la largeur */
+        height: 120px; /* Réduction de la hauteur */
+        font-size: 10px; /* Texte plus petit */
+        padding: 5px;
+        margin: 5px;
+    }
+
+    .player-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 5px;
+    }
+
+    /* Ajuste l'affichage du texte */
+    .player-info {
+        bottom: -5px;
+        left: 3px;
+        padding: 5px;
+    }
+
+    .player-info h5:first-child {
+        font-size: 20px; /* Numéro plus petit */
+    }
+
+    .player-name h6 {
+        font-size: 10px; /* Texte plus petit */
+    }
+
+    .player-name h4 {
+        font-size: 12px;
+    }
+
+    /* Ajuste les flèches pour un meilleur positionnement */
+    .slide-btn {
+        width: 30px;
+        height: 30px;
+    }
+
+    .prev-btn {
+        left: 5px;
+    }
+
+    .next-btn {
+        right: 5px;
+    }
+}
+
+
+	.circular-img {
+		width: 40px; /* Taille uniforme pour toutes les images */
+		height: 40px;
+		margin-top: -20px;
+		border-radius: 50%; /* Rend l'image parfaitement ronde */
+		object-fit: cover; /* Évite la déformation */
+		border: 2px solid white; /* Optionnel : Ajoute une bordure */
+		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Effet d'ombre */
+	}
+
+.rd-navbar-contact {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Espace entre les éléments */
+    margin-right: 20px; /* Ajuste l'espacement */
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: white; /* Couleur du texte */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contact-item .icon {
+    font-size: 18px;
+    color: #28a745; /* Couleur verte */
+    margin-right: 5px;
+}
+/* Effet au survol */
+.contact-item:hover {
+    color: yellow; /* Texte en jaune */
+	text-decoration: none;
+}
+.rd-navbar-list img {
+    border: none !important;
+    outline: none !important;
+}
+
+.rd-navbar-panel-inner.container {
+    max-width: 1600px !important; /* Mets la valeur que tu veux */
+    width: 100%;
+}
+.largeur{
+	max-width: 1480px !important; /* Mets la valeur que tu veux */
+    width: 100%;
+}
+.rd-navbar-nav {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex; /* Alignement horizontal */
+}
+
+.rd-navbar-nav li {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    position: relative; /* Nécessaire pour l'effet */
+    overflow: hidden; /* Empêche le débordement */
+}
+
+/* Dégradé pour le lien actif (inchangé) */
+.rd-navbar-nav .active {
+    background: linear-gradient(to right, #1e3c72, #2a5298) !important; /* Bleu élégant */
+}
+
+/* Styles des liens */
+.rd-navbar-nav a {
+    display: block;
+    padding: 27px 15px;
+    color: white;
+    text-decoration: none; /* Supprime le soulignement */
+    position: relative;
+    z-index: 2;
+    transition: color 0.4s ease-in-out;
+}
+
+/* Effet de remplissage croisé */
+.rd-navbar-nav li:not(:first-child)::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 0%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(150, 152, 0, 0.8), rgba(99, 99, 99, 0.9)); /* Dégradé orange */
+    transition: width 0.5s ease-in-out, left 0.5s ease-in-out;
+    z-index: 1;
+    text-decoration: none;
+}
+
+
+/* Survol : la couleur s’étend des deux côtés et se rejoint au centre */
+.rd-navbar-nav li:hover::before {
+    width: 100%;
+    left: 0;
+	text-decoration: none;
+}
+
+/* Couleur du texte au survol */
+.rd-navbar-nav li:hover a {
+    color: black;
+	text-decoration: none;
+}
+
+/* Le lien actif ne change pas au survol */
+.rd-navbar-nav .active:hover::before {
+    width: 0;
+	text-decoration: none;
+    left: 50%;
+}
+
+.rd-navbar-nav .active:hover a {
+    color: white !important;
+	text-decoration: none;
 }

@@ -29,6 +29,13 @@ Route::get('/calendrier', [CalendrierController::class, 'index'])->name('calendr
 Route::get('/classement', [ClassementController::class, 'index'])->name('classement.index');
 Route::get('/actualite/{id}/ajax', [HomeController::class, 'getActualite'])->name('actualite.ajax');
 
+// Route pour afficher le formulaire
+Route::get('/actualites/create', [HomeController::class, 'create'])->name('actualites.create');
+
+// Route pour enregistrer l'actualité
+Route::post('/actualites/store', [HomeController::class, 'store'])->name('actualites.store');
+Route::get('/equipe', [JoueurController::class, 'equipe'])->name('equipe');
+
 
 
 Route::resource('matchs', MatchEventController::class);

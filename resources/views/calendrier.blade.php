@@ -18,23 +18,26 @@
       </div>
     </article>
     <!-- Game Result Bug-->
+    
     @if ($matchs->count() > 0)
+
+    @foreach($matchs->reverse()->take(1) as $match)
     <article class="game-result">
         <div class="game-info game-info-creative">
-            <p class="game-info-subtitle">{{ $matchs[0]->lieu }} - 
-                <time datetime="{{ $matchs[0]->date }}">{{ \Carbon\Carbon::parse($matchs[0]->date)->format('d F Y') }}</time>
+            <p class="game-info-subtitle">{{ $match->lieu }} - 
+                <time datetime="{{ $match->date }}">{{ \Carbon\Carbon::parse($match->date)->format('d F Y') }}</time>
             </p>
-            <h3 class="game-info-title">{{ $matchs[0]->titre }}</h3>
+            <h3 class="game-info-title">{{ $match->titre }}</h3>
             <div class="game-info-main">
                 <div class="game-info-team game-info-team-first">
                     <figure>
                         <img src="images/team-sportland-75x99.png" alt="" width="75" height="99"/>
                     </figure>
-                    <div class="game-result-team-name">{{ $matchs[0]->domicile->nom }}</div>
+                    <div class="game-result-team-name">{{ $match->domicile->nom }}</div>
                 </div>
                 <div class="game-info-middle game-info-middle-vertical">
-                  <time datetime="{{ $matchs[0]->heure }}">
-                    {{ \Carbon\Carbon::parse($matchs[0]->heure)->format('H\hi') }}
+                  <time datetime="{{ $match->heure }}">
+                    {{ \Carbon\Carbon::parse($match->heure)->format('H\hi') }}
                 </time>
                     <div class="game-result-divider-wrap">
                         <span class="game-info-team-divider">VS</span>
@@ -47,18 +50,27 @@
                     <figure>
                         <img src="images/team-dream-team-91x91.png" alt="" width="91" height="91"/>
                     </figure>
-                    <div class="game-result-team-name">{{ $matchs[0]->exterieur->nom }}</div>
+                    <div class="game-result-team-name">{{ $match->exterieur->nom }}</div>
                 </div>
             </div>
         </div>
+        @if (\Carbon\Carbon::parse($match->date)->isToday())
         <div class="game-info-countdown">
-            <div class="countdown countdown-bordered" data-type="until" data-time="{{ $matchs[0]->date }}" data-format="dhms" data-style="short"></div>
+          <div class="countdown countdown-bordered" data-type="until" data-time="{{ $match->date }} {{ $match->heure }}" data-format="dhms" data-style="short">Match aujourd'hui dans {{ $match->date }} {{ $match->heure }}</div>
+      </div>
+          @else
+        <div class="game-info-countdown">
+            <div class="countdown countdown-bordered" data-type="until" data-time="{{ $match->date }} {{ $match->heure }}" data-format="dhms" data-style="short">{{ $match->date }} {{ $match->heure }}</div>
         </div>
+        
+        @endif
+
     </article>
+    @endforeach
 @endif
 
 <ul class="equipe">
-    @foreach ($matchs->slice(1, 4) as $matchday)
+  @foreach ($matchs->reverse()->skip(1)->slice(0,4) as $matchday)
         <div class="main-component">
             <article class="game-result game-result-creative">
                 <div class="game-result-main-vertical">

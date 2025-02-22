@@ -9,6 +9,7 @@ use App\Models\Equipe;
 use App\Models\MatchEvent;
 use App\Models\Rencontre;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
 
 class HomeController extends Controller
 {
@@ -60,4 +61,25 @@ class HomeController extends Controller
     $actualite = Actualite::findOrFail($id);
     return response()->json($actualite);
 }
+public function create()
+    {
+        return view('actualites.create');
+    }
+    // Enregistrer en base de données
+    public function store(Request $request)
+    {
+        $request->validate([
+            'titre' => 'required|string|max:255',
+            'contenu' => 'required|string',
+            'date_publication' => 'required|date',
+        ]);
+
+        Actualite::create([
+            'titre' => $request->titre,
+            'contenu' => $request->contenu,
+            'date_publication' => $request->date_publication,
+        ]);
+
+        return redirect()->route('actualites.create')->with('success', 'Actualité créée avec succès !');
+    }
 }

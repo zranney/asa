@@ -47,13 +47,25 @@ class CalendrierController extends Controller
             return strcmp($a['nom'], $b['nom']);
         })->values();
         
+
+        $now = Carbon::now();
+       // Supprimer les matchs où la date et l'heure sont dépassées
+    MatchEvent::where(function ($query) use ($now) {
+        $query->where('date', '<', $now->toDateString()) // Matchs avant aujourd'hui
+              ->orWhere(function ($q) use ($now) {
+                  $q->where('date', '=', $now->toDateString()) // Matchs aujourd'hui
+                    ->where('heure', '<=', $now->toTimeString()); // Mais l'heure est déjà passée
+              });
+    })
+    ->delete();
+
         $matchs = MatchEvent::with(['domicile', 'exterieur'])
-                    ->orderBy('date', 'desc')
-                    ->orderBy('heure', 'desc')
-                    ->get();
-
-                   
-
+        ->whereDate('date', '>=', Carbon::today()) // Prendre uniquement les matchs futurs
+        ->orderBy('date', 'asc') // Trier par date du plus proche au plus lointain
+        ->orderBy('heure', 'asc') // Trier aussi par heure
+        ->get();
+        
+    
         return view('calendrier', compact('calendrier_event', 'classements', 'matchs'));
     }
 }

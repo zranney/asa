@@ -51,5 +51,35 @@ class JoueurController extends Controller
 
         return redirect()->route('joueurs.index')->with('success', 'Joueur ajouté avec succès!');
     }
+
+    public static  function getPosteIcon($poste)
+{
+    $icons = [
+        'Gardiens' => 'fas fa-hand-paper', // 🧤 Gants pour gardien
+        'Défenseurs' => 'fas fa-shield-alt', // 🛡️ Bouclier pour défense
+        'Milieux' => 'fas fa-futbol', // ⚽ Ballon pour milieu
+        'Attaquants' => 'fas fa-bullseye', // 🎯 Cible pour attaquant
+    ];
+
+    return $icons[$poste] ?? 'fas fa-user'; // Icône par défaut
+}
+
+
+
+
+    public function equipe() {
+        $joueurs = Joueur::all();
+    
+        $categories = [
+            'Gardiens' => $joueurs->where('poste', 'Gardien'),
+            'Défenseurs' => $joueurs->where('poste', 'Défenseur'),
+            'Milieux' => $joueurs->where('poste', 'Milieu'),
+            'Attaquants' => $joueurs->where('poste', 'Attaquant'),
+            'Staff' => $joueurs->where('poste', 'Staff'),
+        ];
+    
+        return view('equipe', compact('categories'));
+    }
+    
 }
 

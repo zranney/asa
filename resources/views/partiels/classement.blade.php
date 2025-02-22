@@ -28,7 +28,7 @@
               @endphp
       
               @foreach ($classements as $classement)
-              <tr class="{{ $n === 1 ? 'highlight' : ($n === count($classements) ? 'highlight-red' : '') }}">
+              <tr class="{{ $classement['nom'] === "ASA" ? 'highlight' : ($n === count($classements) ? 'highlight-red' : '') }}">
                 <td><span>{{$n++}}</span></td>
                 <td class="team-inline">
                   <div class="team-figure"><img src="images/team-sportland-31x41.png" alt="" width="31" height="41"/>

@@ -1,6 +1,6 @@
 @extends('./layouts/app')
 
-@section('title', 'ASA - Accueil')
+@section('title', 'ASA')
 
 
 @section('content')
@@ -69,28 +69,31 @@
               </div>
             </article>
             @if ($matchs->count() > 0)
+            @foreach($matchs->reverse()->take(1) as $match)
+              
+            
             <!-- Game Result Bug-->
             <article class="game-result">
               <div class="game-info game-info-creative">
-                <p class="game-info-subtitle">{{ $matchs[0]->lieu }} - 
-                  <time datetime="{{ $matchs[0]->heure }}">
-                    {{ \Carbon\Carbon::parse($matchs[0]->heure)->format('H\hi') }}
+                <p class="game-info-subtitle">{{ $match->lieu }} - 
+                  <time datetime="{{ $match->heure }}">
+                    {{ \Carbon\Carbon::parse($match->heure)->format('H\hi') }}
                 </time>
                 </p>
-                <h3 class="game-info-title">{{ $matchs[0]->titre }}</h3>
+                <h3 class="game-info-title">{{ $match->titre }}</h3>
                 <div class="game-info-main">
                   <div class="game-info-team game-info-team-first">
                     <figure><img src="images/team-sportland-75x99.png" alt="" width="75" height="99"/>
                     </figure>
-                    <div class="game-result-team-name">{{ $matchs[0]->domicile->nom }}</div>
+                    <div class="game-result-team-name">{{ $match->domicile->nom }}</div>
                     {{-- <div class="game-result-team-country">Abidjan</div> --}}
                   </div>
                   <div class="game-info-middle game-info-middle-vertical">
-                    <time class="time-big" datetime="{{ \Carbon\Carbon::parse($matchs[0]->date)->format('Y-m-d') }}">
+                    <time class="time-big" datetime="{{ \Carbon\Carbon::parse($match->date)->format('Y-m-d') }}">
                       <span class="heading-3">
-                          {{ ucfirst(\Carbon\Carbon::parse($matchs[0]->date)->translatedFormat('D d')) }}
+                          {{ ucfirst(\Carbon\Carbon::parse($match->date)->translatedFormat('D d')) }}
                       </span> 
-                      {{ \Carbon\Carbon::parse($matchs[0]->date)->translatedFormat('F Y') }}
+                      {{ \Carbon\Carbon::parse($match->date)->translatedFormat('F Y') }}
                   </time>
                     <div class="game-result-divider-wrap"><span class="game-info-team-divider">VS</span></div>
                     <div class="group-sm">
@@ -100,15 +103,23 @@
                   <div class="game-info-team game-info-team-second">
                     <figure><img src="images/team-dream-team-91x91.png" alt="" width="91" height="91"/>
                     </figure>
-                    <div class="game-result-team-name">{{ $matchs[0]->exterieur->nom }}</div>
+                    <div class="game-result-team-name">{{ $match->exterieur->nom }}</div>
                     {{-- <div class="game-result-team-country">San-Pédro</div> --}}
                   </div>
                 </div>
               </div>
-              <div class="game-info-countdown">
-                <div class="countdown countdown-bordered" data-type="until" data-time="{{ $matchs[0]->date }}" data-format="dhms" data-style="short"></div>
-              </div>
+              @if (\Carbon\Carbon::parse($match->date)->isToday())
+        <div class="game-info-countdown">
+          <div class="countdown countdown-bordered" data-type="until" data-time="{{ $match->date }} {{ $match->heure }}" data-format="dhms" data-style="short">Match aujourd'hui dans {{ $match->date }} {{ $match->heure }}</div>
+      </div>
+          @else
+        <div class="game-info-countdown">
+            <div class="countdown countdown-bordered" data-type="until" data-time="{{ $match->date }} {{ $match->heure }}" data-format="dhms" data-style="short">{{ $match->date }} {{ $match->heure }}</div>
+        </div>
+        
+        @endif
             </article>
+            @endforeach
           </div>
         </div>
         @endif
