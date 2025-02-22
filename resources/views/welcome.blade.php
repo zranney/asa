@@ -49,11 +49,55 @@
     <div class="swiper-button swiper-button-next"></div>
     <div class="swiper-pagination"></div>
   </section>
+  <section class="quicklinks" id="quicklinks">
+    <div class="quicklinks__container">
+        <ul class="quicklinks__menu">
+            <span class="quicklinks__title">Ne manquez pas</span>
+            <li class="quicklinks__item">
+                <a class="quicklinks__link" href="/culers-membership">Devenez Membre</a>
+            </li>
+            <li class="quicklinks__item">
+                <a class="quicklinks__link" href="/boutique">Boutique Officielle</a>
+            </li>
+            <li class="quicklinks__item">
+                <a class="quicklinks__link" href="/billetterie">Billetterie</a>
+            </li>
+        </ul>
+    </div>
+</section>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const quicklinks = document.getElementById("quicklinks");
+    const slider = document.querySelector(".swiper-container"); // Sélectionne le slider
+
+    if (!quicklinks || !slider) {
+        console.error("❌ Élément non trouvé : Vérifie que l'ID `quicklinks` et la classe `.swiper-container` existent.");
+        return;
+    }
+
+    function handleScroll() {
+        const sliderBottom = slider.getBoundingClientRect().bottom;
+        console.log("🖥️ Position du slider :", sliderBottom); // Vérification
+
+        if (sliderBottom < window.innerHeight * 0.75) { 
+            quicklinks.classList.add("show"); // Afficher la section après 75% de l'écran
+        } else {
+            quicklinks.classList.remove("show"); // Cacher si on revient en haut
+        }
+    }
+
+    window.addEventListener("scroll", handleScroll);
+});
+
+
+</script>
+
 
   <!-- Latest News-->
   <section class="section section-md bg-gray-100">
     <div class="container">
-      <div class="row row-50">
+      <div class="row row-50 distance">
         <div class="col-lg-8">
           <div class="main-component">
 

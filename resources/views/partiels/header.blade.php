@@ -35,6 +35,48 @@
                   </ul>
                 </div> --}}
               </div>
+              <div class="rd-navbar-panel-item rd-navbar-panel-item-center">
+                <span id="typing-text"></span>
+            </div>
+            <script>
+            document.addEventListener("DOMContentLoaded", function () {
+    const text = "Bienvenue sur le site officiel de l'Association Sportive les Anges";
+    let index = 0;
+    const speed = 50; // Vitesse d'apparition des lettres
+    const specialLetters = { "A": true, "S": true, "A": true };
+    const delayBetweenLoops = 10000; // Temps avant de recommencer (2s)
+    const target = document.getElementById("typing-text");
+
+    function typeWriter() {
+        if (index < text.length) {
+          let char = text.charAt(index);
+            if (specialLetters[char]) {
+                char = `<span class="special-letter">${char}</span>`; // Ajoute une classe aux lettres spéciales
+            }
+            target.innerHTML += char;
+            index++;
+            setTimeout(typeWriter, speed);
+        } else {
+            setTimeout(resetTyping, delayBetweenLoops);
+        }
+    }
+
+    function resetTyping() {
+        target.innerHTML = ""; // Efface le texte
+        index = 0;
+        setTimeout(typeWriter, speed); // Relance l'animation
+    }
+
+    // Attendre le chargement total de la page
+    window.onload = function () {
+        if (target) {
+            typeWriter(); // Démarre l’animation une fois la page chargée
+        }
+    };
+});
+
+          </script>
+          
               <div class="rd-navbar-panel-item rd-navbar-panel-item-right">
                 <!-- Section Contact -->
                 <div class="rd-navbar-contact">
