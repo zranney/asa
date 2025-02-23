@@ -11,43 +11,46 @@
       <div class="swiper-slide text-center" data-slide-bg="images/slider-1-slide-1-1920x671.jpg">
         <div class="container">
           <div class="row justify-content-center">
-            <div class="col-xl-6">
-              <div class="swiper-slide-caption">
-                <h1 data-caption-animate="fadeInUp" data-caption-delay="100">We play Soccer</h1>
-                <h4 data-caption-animate="fadeInUp" data-caption-delay="200">like no one else in the united states</h4><a class="button button-primary" data-caption-animate="fadeInUp" data-caption-delay="300" href="/about-us">Voir plus</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="swiper-slide" data-slide-bg="images/slider-1-slide-2-1920x671.jpg">
-        <div class="container">
-          <div class="row justify-content-end">
-            <div class="col-xl-5">
-              <div class="swiper-slide-caption">
-                <h1 data-caption-animate="fadeInUp" data-caption-delay="100">We Are Pros</h1>
-                <h4 data-caption-animate="fadeInUp" data-caption-delay="200">in Everything Concerning Soccer</h4><a class="button button-primary" data-caption-animate="fadeInUp" data-caption-delay="300" href="/about-us">Voir plus</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="swiper-slide" data-slide-bg="images/slider-1-slide-3-1920x671.jpg">
-        <div class="container">
-          <div class="row">
-            <div class="col-xl-5">
-              <div class="swiper-slide-caption">
-                <h1 data-caption-animate="fadeInUp" data-caption-delay="100">Best Website</h1>
-                <h4 data-caption-animate="fadeInUp" data-caption-delay="200">for soccer news, updates, <br class="d-none d-xl-block"> and game results</h4><a class="button button-primary" data-caption-animate="fadeInUp" data-caption-delay="300" href="/about-us">Voir plus</a>
-              </div>
-            </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="swiper-button swiper-button-prev"></div>
-    <div class="swiper-button swiper-button-next"></div>
-    <div class="swiper-pagination"></div>
+    <div class="swiper-overlay">
+      <div class="swiper-message" id="message1">Découvrez nos équipes et compétitions</div>
+      <div class="swiper-message" id="message2">Découvrez nos équipes et compétitions</div>
+      <div class="swiper-message" id="message3">Rejoignez-nous pour une expérience unique</div>
+  </div>
+<script>
+ document.addEventListener("DOMContentLoaded", function () {
+    const overlay = document.querySelector(".swiper-overlay");
+    const messages = [
+        document.getElementById("message1"),
+        document.getElementById("message2"),
+        document.getElementById("message3")
+    ];
+    
+    const delayStart = 5000; // Apparition de l'overlay après 5s
+    const delayBetween = 1000; // 1s entre chaque message
+
+    function showMessages() {
+        messages.forEach((msg, index) => {
+            setTimeout(() => {
+                msg.classList.add("show-message");
+            }, index * delayBetween);
+        });
+    }
+
+    // Affiche l'overlay puis les messages
+    setTimeout(() => {
+        overlay.classList.add("show-overlay");
+        setTimeout(showMessages, 1000);
+    }, delayStart);
+});
+
+
+
+</script>  
+    
   </section>
   <section class="quicklinks" id="quicklinks">
     <div class="quicklinks__container">

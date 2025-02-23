@@ -25572,3 +25572,34 @@ a.link-hover-style-1:hover {
     bottom: 20px; /* Position finale */
     opacity: 1;
 }
+/* Conteneur des messages */
+.swiper-overlay {
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: flex-start; /* Aligner les messages à gauche */
+    gap: 50px;
+    text-align: left;
+    z-index: 1000;
+}
+
+/* Style des messages avec animation */
+.swiper-message {
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(135deg, #cb2027, #47002c); /* Dégradé rouge & bordeaux */
+    padding: 60px 30px;
+    border-radius: 8px;
+    opacity: 0;
+    transform: translateX(-100px); /* Début hors écran à gauche */
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+/* Animation activée */
+.show-message {
+    opacity: 1 !important;
+    transform: translateX(0) !important; /* Déplace vers la position normale */
+}
