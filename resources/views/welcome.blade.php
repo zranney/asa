@@ -8,7 +8,7 @@
 <!-- Swiper-->
 <section class="section swiper-container swiper-slider swiper-classic bg-gray-2" data-loop="true" data-autoplay="4000" data-simulate-touch="false" data-slide-effect="fade">
     <div class="swiper-wrapper">
-      <div class="swiper-slide text-center" data-slide-bg="images/slider-1-slide-1-1920x671.jpg">
+      <div class="swiper-slide text-center" data-slide-bg="images/stade.jpg">
         <div class="container">
           <div class="row justify-content-center">
           </div>
@@ -98,8 +98,8 @@
 
 
   <!-- Latest News-->
-  <section class="section section-md bg-gray-100">
-    <div class="container">
+  <section class="section section-md custom-gradient-bg">
+    <div class="container" style="background:white; padding: 50px; border-radius: 25px;">
       <div class="row row-50 distance">
         <div class="col-lg-8">
           <div class="main-component">
@@ -111,7 +111,7 @@
             <!-- Heading Component-->
             <article class="heading-component">
               <div class="heading-component-inner">
-                <h5 class="heading-component-title">Matchs à venir
+                <h5 class="heading-component-title">Prochain match
                 </h5><a class="button button-xs button-gray-outline" href="/calendrier">Calendrier</a>
               </div>
             </article>
@@ -168,6 +168,144 @@
             </article>
             @endforeach
           </div>
+          <div class="main-component">
+            <article class="heading-component">
+                <div class="heading-component-inner">
+                    <h5 class="heading-component-title">Notre Équipe</h5>
+                </div>
+            </article>
+        
+            <div class="row row-30" style="justify-content: center;">
+                @foreach ($categories as $poste => $joueurs)
+                    @if ($joueurs->count() > 0)
+                        <div class="poste-section">
+                            <h3 class="poste-titre">
+                                <i class="{{ App\Http\Controllers\JoueurController::getPosteIcon($poste) }}"></i> 
+                                {{ $poste }}
+                            </h3>
+        
+                            <div class="new-effectif-slider">
+                              <!-- Flèche gauche -->
+                              <button class="new-slide-btn new-prev-btn"><i class="fas fa-chevron-left"></i></button>
+                          
+                              <!-- Conteneur des joueurs -->
+                              <div class="new-player-wrapper">
+                                  <div class="new-player-list">
+                                      @foreach ($joueurs as $joueur)
+                                          <div class="new-player-card">
+                                              <img src="{{ asset('storage/'. $joueur->photo) }}" alt="{{ $joueur->nom }} {{ $joueur->prenom }}">
+                                              <div class="new-player-details">
+                                                  <h5>{{ $joueur->numero }}</h5>
+                                                  <div class="new-player-name">
+                                                      <h6>{{ $joueur->prenom }}</h6>
+                                                      <h4>{{ $joueur->nom }}</h4>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      @endforeach
+                                  </div>
+                              </div>
+                          
+                              <!-- Flèche droite -->
+                              <button class="new-slide-btn new-next-btn"><i class="fas fa-chevron-right"></i></button>
+                          
+                              <!-- Pagination -->
+                              <div class="new-swiper-pagination"></div>
+                          </div>
+                          
+                        </div>
+                    @endif
+                @endforeach
+            </div>
+        </div>
+        
+        
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+    const sliders = document.querySelectorAll(".new-effectif-slider");
+
+    sliders.forEach(slider => {
+        const prevBtn = slider.querySelector(".new-prev-btn");
+        const nextBtn = slider.querySelector(".new-next-btn");
+        const playerList = slider.querySelector(".new-player-list");
+        const pagination = slider.querySelector(".new-swiper-pagination");
+        const players = Array.from(playerList.children);
+        let index = 0;
+        const maxVisible = 4; // 🔹 Afficher 4 cartes maximum par page
+
+        if (players.length === 0) return;
+
+        function updateSlider() {
+            const playerWidth = players[0].offsetWidth + 20; // Largeur + espace entre cartes
+            const totalPlayers = players.length;
+            let maxIndex = Math.max(0, totalPlayers - maxVisible);
+
+            // 🔹 Ajustement pour la dernière page (éviter les espaces vides)
+            if (index + maxVisible > totalPlayers) {
+                index = totalPlayers - maxVisible;
+            }
+
+            playerList.style.transition = "transform 0.6s ease-in-out"; 
+            playerList.style.transform = `translateX(-${index * playerWidth}px)`;
+
+            // 🔹 Afficher ou cacher les flèches
+            prevBtn.style.display = index > 0 ? "flex" : "none";
+            nextBtn.style.display = index + maxVisible < totalPlayers ? "flex" : "none";
+
+            updatePagination();
+        }
+
+        function updatePagination() {
+            if (!pagination) return;
+            pagination.innerHTML = "";
+            const pageCount = Math.ceil(players.length / maxVisible);
+
+            for (let i = 0; i < pageCount; i++) {
+                const bullet = document.createElement("span");
+                bullet.classList.add("new-swiper-pagination-bullet");
+                if (i === Math.floor(index / maxVisible)) {
+                    bullet.classList.add("active");
+                }
+                bullet.addEventListener("click", () => {
+                    index = i * maxVisible;
+                    updateSlider();
+                });
+                pagination.appendChild(bullet);
+            }
+        }
+
+        nextBtn.addEventListener("click", function () {
+            const totalPlayers = players.length;
+            let maxIndex = Math.max(0, totalPlayers - maxVisible);
+
+            if (index + maxVisible < totalPlayers) {
+                index += maxVisible;
+                if (index > maxIndex) index = maxIndex;
+                updateSlider();
+            }
+        });
+
+        prevBtn.addEventListener("click", function () {
+            if (index > 0) {
+                index -= maxVisible;
+                if (index < 0) index = 0;
+                updateSlider();
+            }
+        });
+
+        window.addEventListener("resize", () => {
+            index = 0;
+            updateSlider();
+        });
+
+        updateSlider();
+    });
+});
+
+
+
+</script>     
         </div>
         @endif
         <!-- Aside Block-->
@@ -176,21 +314,7 @@
             
             @include('partiels.resultats', ['rencontres' => $classements])
             @include('partiels.classement', ['classements' => $classements])
-            <div class="aside-component">
-              <!-- Heading Component-->
-              <article class="heading-component">
-                <div class="heading-component-inner">
-                  <h5 class="heading-component-title">Suivez-nous
-                  </h5>
-                </div>
-              </article>
-              <!-- Buttons Media-->
-              <div class="group-sm group-flex"><a class="button-media button-media-facebook" href="#">
-                  <h4 class="button-media-title">8.4k</h4>
-                  <p class="button-media-action">Like<span class="icon material-icons-add_circle_outline icon-sm"></span></p><span class="button-media-icon fa-facebook"></span></a><a class="button-media button-media-twitter" href="#">
-                    <h4 class="button-media-title">2.7k</h4>
-                    <p class="button-media-action">Follow<span class="icon material-icons-add_circle_outline icon-sm"></span></p><span class="button-media-icon fa-instagram"></span></a></div>
-            </div>
+           
             <div class="aside-component">
               <!-- Heading Component-->
               <article class="heading-component">
@@ -267,7 +391,7 @@
                 </div>
               </article>
             </div>
-            <div class="aside-component">
+            {{-- <div class="aside-component">
               <div class="owl-carousel-outer-navigation">
                 <!-- Heading Component-->
                 <article class="heading-component">
@@ -379,7 +503,53 @@
                   </article>
                 </div>
               </div>
+            </div> --}}
+            <div class="aside-component">
+              <!-- Heading Component-->
+              <article class="heading-component">
+                <div class="heading-component-inner">
+                  <h5 class="heading-component-title">Suivez-nous
+                  </h5>
+                </div>
+              </article>
+              <!-- Buttons Media-->
+              <div class="group-sm group-flex"><a class="button-media button-media-facebook" href="#">
+                  <h4 class="button-media-title">8.4k</h4>
+                  <p class="button-media-action">Like<span class="icon material-icons-add_circle_outline icon-sm"></span></p><span class="button-media-icon fa-facebook"></span></a><a class="button-media button-media-twitter" href="#">
+                    <h4 class="button-media-title">2.7k</h4>
+                    <p class="button-media-action">Follow<span class="icon material-icons-add_circle_outline icon-sm"></span></p><span class="button-media-icon fa-instagram"></span></a></div>
             </div>
+            <div class="aside-component app-download">
+              <!-- Titre -->
+              <article class="heading-component">
+                  <div class="heading-component-inner">
+                      <h5 class="heading-component-title1">Téléchargez notre application</h5>
+                  </div>
+              </article>
+          
+              <!-- Section de téléchargement -->
+              <div class="app-download-container">
+                  <!-- Image du téléphone -->
+                  <div class="app-image">
+                      <img src="https://asec.ci/assets/images/footer/mobile.png" alt="Télécharger l'application">
+                  </div>
+          
+                  <!-- Texte et boutons -->
+                  <div class="app-download-content">
+                      <p class="app-download-text">Disponible sur Android & iOS</p>
+                      <div class="app-buttons">
+                          <a href="#" class="app-download-button">
+                              <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play">
+                          </a>
+                          <a href="#" class="app-download-button">
+                            <i class="fab fa-apple"></i> Télécharger sur l'App Store
+                        </a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          
+            
           </aside>
         </div>
       </div>

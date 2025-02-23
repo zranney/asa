@@ -6,6 +6,7 @@ use App\Models\Actualite;
 use App\Models\Calendrier_event;
 use App\Models\Classement;
 use App\Models\Equipe;
+use App\Models\Joueur;
 use App\Models\MatchEvent;
 use App\Models\Rencontre;
 use Illuminate\Http\Request;
@@ -50,10 +51,19 @@ class HomeController extends Controller
         $matchs = MatchEvent::all();
         $rencontres = Rencontre::with(['equipe1', 'equipe2'])->get();
         $actualites = Actualite::orderBy('date_publication', 'desc')->get();
+        $joueurs = Joueur::all();
+        
+        $categories = [
+            'Gardiens' => $joueurs->where('poste', 'Gardien'),
+            'Défenseurs' => $joueurs->where('poste', 'Défenseur'),
+            'Milieux' => $joueurs->where('poste', 'Milieu'),
+            'Attaquants' => $joueurs->where('poste', 'Attaquant'),
+            'Staff' => $joueurs->where('poste', 'Staff'),
+        ];
 
         
 
-    return view('welcome', compact('classements', 'equipes', 'matchs', 'rencontres', 'actualites')); // Passer la variable à la vue
+    return view('welcome', compact('classements', 'equipes', 'matchs', 'rencontres', 'actualites', 'categories')); // Passer la variable à la vue
     }
 
     public function getActualite($id)

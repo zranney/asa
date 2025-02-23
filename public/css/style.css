@@ -830,6 +830,8 @@ button.link-cart::-moz-focus-inner {
 * + .main-component {
 	
 	margin-top: 50px;
+	max-width: 100%;
+	overflow: hidden;
 }
 
 * + .main-component1 {
@@ -13769,7 +13771,7 @@ html [class*='section-'].section-bottom-0 {
 
 @media (min-width: 992px) {
 	.section-md {
-		padding: 80px 0 90px;
+		padding: 70px 0 90px; /* Height body en bas du swiper */
 	}
 	.section-lg {
 		padding: 100px 0;
@@ -25559,11 +25561,13 @@ a.link-hover-style-1:hover {
     transform: translateX(-50%);
     background: linear-gradient(135deg, #cb2027, #47002c); /* Dégradé rouge & bordeaux */
     padding: 15px 20px;
-    border-radius: 8px;
+    border-radius: 40px;
     color: white;
     text-align: center;
     transition: bottom 0.5s ease-in-out, opacity 0.5s ease-in-out;
     opacity: 0;
+	width : 30%;
+	height : 50px;
     z-index: 1000; /* Toujours au-dessus */
 }
 
@@ -25590,7 +25594,7 @@ a.link-hover-style-1:hover {
     font-size: 18px;
     font-weight: bold;
     color: white;
-    background: linear-gradient(135deg, #cb2027, #47002c); /* Dégradé rouge & bordeaux */
+    background: linear-gradient(180deg, #7313bd, #134739); /* Dégradé rouge & bordeaux */
     padding: 60px 30px;
     border-radius: 8px;
     opacity: 0;
@@ -25602,4 +25606,363 @@ a.link-hover-style-1:hover {
 .show-message {
     opacity: 1 !important;
     transform: translateX(0) !important; /* Déplace vers la position normale */
+}
+.custom-gradient-bg {
+    background: linear-gradient(to right, 
+	#181733 0%,   /* Bordeaux fondu à gauche */
+	#134739 50%,               /* Rouge bien visible au centre */
+	#134739 60%,               /* Toujours rouge au centre */
+	#181733 100%  /* Bordeaux fondu à droite */
+) !important; 
+	opacity : 0.9;
+}
+.post-future {
+    background: #fff;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.post-future:hover {
+    transform: translateY(-5px);
+}
+
+.post-future-figure img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.post-future-title a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.post-future-meta {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.post-future-text p {
+    margin: 5px 0;
+}
+
+/* 🔹 Empêcher le débordement du main-component */
+.main-component {
+    max-width: 100%;
+    padding: 20px;
+    overflow: hidden;
+}
+
+/* 🔹 Empêcher poste-section de dépasser */
+.poste-section {
+    max-width: 100%;
+    overflow: hidden;
+    padding: 5px;
+}
+
+/* 🔹 Garder les cartes à 150px x 170px */
+/* .new-player-card {
+    width: 140px;
+    height: 190px;
+    flex-shrink: 0;
+    padding: 5px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+ */
+/* 🔹 Ajustement de l'image */
+.new-player-card img {
+    width: 90%;
+    height: 75%;
+    border-radius: 8px;
+    object-fit: cover; /* Assure un bon rendu */
+}
+
+/* 🔹 La liste des joueurs */
+.new-player-list {
+    display: flex;
+    gap: 10px;
+    transition: transform 0.6s ease-in-out;
+}
+
+/* ✅ Boutons de navigation (flèches) */
+.new-slide-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+	z-index: 100; /* 🔥 Met au-dessus des autres éléments */
+    opacity: 1; /* Assure que les boutons sont visibles */
+}
+
+/* ✅ Position de la flèche gauche */
+.new-prev-btn {
+    left: -50px; /* Ajuste la position */
+}
+
+/* ✅ Position de la flèche droite */
+.new-next-btn {
+    right: -50px; /* Ajuste la position */
+}
+
+
+/* 🔹 Pagination (points en bas) */
+.new-swiper-pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.new-swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    margin: 5px;
+    background: #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.new-swiper-pagination-bullet.active {
+    background: #134739;
+}
+
+/* 📱 Adaptation mobile */
+@media (max-width: 768px) {
+    .new-player-card {
+        width: 130px;
+        height: 170px;
+    }
+}
+/* ✅ Nouvelle classe pour éviter les conflits */
+.new-player-card {
+    position: relative;
+    flex: 0 0 auto;
+    width: 120px;
+    height: 150px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 30px 10px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    transition: transform 0.6s ease, box-shadow 0.6s ease;
+}
+
+/* ✅ Effet au survol */
+.new-player-card:hover {
+    transform: scale(1.05); /* Légère augmentation de la taille */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Ombre plus marquée */
+}
+
+/* ✅ Effet lumineux autour de la carte */
+.new-player-card::before {
+    content: "";
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    z-index: -1;
+}
+
+.new-player-card:hover::before {
+    opacity: 1;
+}
+
+/* ✅ Image du joueur en full cover */
+.new-player-card img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ✅ Conteneur du texte en bas à gauche */
+.new-player-details {
+    font-family: 'Oswald', sans-serif;
+    position: absolute;
+    bottom: -12px;
+    left: 2px;
+    padding: 8px 4px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+}
+
+/* ✅ Numéro du joueur en gros */
+.new-player-details h5:first-child {
+    font-family: 'Oswald', sans-serif;
+    font-size: 30px; /* Taille plus grande */
+    font-weight: bold;
+    color: white;
+    margin-right: 5px;
+}
+
+/* ✅ Nom et prénom alignés à droite du numéro */
+.new-player-name {
+    margin-top: -5px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ✅ Style du prénom */
+.new-player-name h6 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 10px;
+    font-weight: 500;
+    color: white;
+    margin: 0;
+}
+
+/* ✅ Style du nom */
+.new-player-name h4 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    margin: 0;
+    letter-spacing: 1px;
+}
+
+/* ✅ Effet spécial au survol */
+.new-player-card:hover .new-player-details h5 {
+    color: #28a745; /* Vert dynamique */
+    transition: color 1.0s ease;
+}
+.new-effectif-slider {
+    position: relative; /* Assure que les flèches se positionnent correctement */
+    overflow: visible;
+}
+/* ✅ Conteneur général avec un fond vert */
+.app-download {
+    background: linear-gradient(45deg, #134739, #28a745); /* Dégradé vert */
+    padding: 20px;
+	padding-bottom: 40px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* ✅ Titre */
+.heading-component-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+.heading-component-title1 {
+    font-size: 20px;
+    font-weight: bold;
+	color : white;
+    margin-bottom: 15px;
+}
+
+
+/* ✅ Conteneur principal */
+.app-download-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+	padding-top: 20px;
+    gap: 15px;
+    width: 100%;
+}
+
+/* ✅ Image du téléphone */
+.app-image {
+    width: 150px;
+    height: 180px;
+    background: rgba(255, 255, 255, 0.2); /* Fond blanc semi-transparent */
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.app-image img {
+    width: 80%;
+    height: auto;
+}
+
+/* ✅ Contenu texte et boutons */
+.app-download-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* ✅ Texte */
+.app-download-text {
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 10px;
+}
+
+/* ✅ Boutons */
+.app-buttons {
+    display: flex;
+    gap: 10px;
+}
+.app-download-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgb(24, 23, 51), #47002c);
+
+    padding: 5px 10px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: rgb(24, 23, 51) 0.3s ease-in-out;
+	font-size: 12px;
+	color : white;
+}
+
+.app-download-button img {
+    width: 120px; /* Ajuste la taille des badges Google Play et App Store */
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.app-download-button img:hover {
+    transform: scale(1.1);
+}
+.app-download-button:hover {
+    background: rgb(34, 32, 71); /* Légère variation au survol */
+	text-decoration: none;
+	transition: rgb(24, 23, 51) 0.3s ease-in-out;
+	font-size: 12px;
+	color : white;
+
 }

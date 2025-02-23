@@ -2,7 +2,7 @@
 <article class="heading-component">
     <div class="heading-component-inner">
         <h5 class="heading-component-title">Actualités</h5>
-        <a class="button button-xs button-gray-outline" href="#">Tout voir</a>
+        {{-- <a class="button button-xs button-gray-outline" href="#">Tout voir</a> --}}
     </div>
 </article>
 <div class="row row-30">
@@ -67,7 +67,7 @@
 </script>
 
 
-    <div class="col-md-12">
+    {{-- <div class="col-md-12">
       <!-- Swiper-->
       <div class="swiper-container swiper-slider post-slider" data-loop="false" data-autoplay="false" data-simulate-touch="false">
         <div class="swiper-wrapper">
@@ -127,6 +127,6 @@
         <div class="swiper-button-prev"></div>
         <div class="swiper-button-next"></div>
       </div>
-    </div>
+    </div> --}}
   
  
