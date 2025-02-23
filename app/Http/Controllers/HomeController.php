@@ -11,6 +11,7 @@ use App\Models\MatchEvent;
 use App\Models\Rencontre;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -60,10 +61,11 @@ class HomeController extends Controller
             'Attaquants' => $joueurs->where('poste', 'Attaquant'),
             'Staff' => $joueurs->where('poste', 'Staff'),
         ];
+        $message = DB::table('messages')->value('message');
 
         
 
-    return view('welcome', compact('classements', 'equipes', 'matchs', 'rencontres', 'actualites', 'categories')); // Passer la variable à la vue
+    return view('welcome', compact('classements', 'equipes', 'matchs', 'rencontres', 'actualites', 'categories', 'message')); // Passer la variable à la vue
     }
 
     public function getActualite($id)

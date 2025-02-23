@@ -15,6 +15,44 @@
         </div>
       </div>
     </div>
+    <div class="swiper-overlay1">
+      <span id="leader-text" data-message="{{ $message }}"></span>
+  </div>
+
+  <script>
+
+document.addEventListener("DOMContentLoaded", function () {
+    const legendLeader = document.getElementById("leader-text");
+    const textLeader = legendLeader.getAttribute("data-message"); // 🔥 Récupération du message de la BDD
+    const wordsLeader = textLeader.split(" ");
+    
+    let indexLeader = 0;
+    function typeWriterLeader() {
+        if (indexLeader < wordsLeader.length) {
+            let wordSpan = document.createElement("span");
+            wordSpan.innerHTML = wordsLeader[indexLeader] + " ";
+            
+            if (indexLeader === 0) {
+                wordSpan.classList.add("first-word"); // 🔴 Style spécial pour le premier mot
+            } else {
+                wordSpan.style.color = "white"; 
+            }
+            
+            legendLeader.appendChild(wordSpan);
+            indexLeader++;
+            setTimeout(typeWriterLeader, 300); // ⏳ Délai entre chaque mot
+        } else {
+            legendLeader.style.opacity = 1;
+            legendLeader.style.transform = "translateY(0)";
+        }
+    }
+
+    setTimeout(typeWriterLeader, 2500); // ⏳ Lancer après 1.5s
+});
+
+  </script>
+
+
     <div class="swiper-overlay">
       <div class="swiper-message" id="message1">Découvrez nos équipes et compétitions</div>
       <div class="swiper-message" id="message2">Découvrez nos équipes et compétitions</div>
@@ -46,8 +84,6 @@
         setTimeout(showMessages, 1000);
     }, delayStart);
 });
-
-
 
 </script>  
     

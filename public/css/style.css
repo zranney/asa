@@ -25588,6 +25588,34 @@ a.link-hover-style-1:hover {
     text-align: left;
     z-index: 1000;
 }
+.swiper-overlay1 {
+    position: absolute;
+    top: -30%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5); /* Assombrit légèrement */
+    color: white;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    z-index: 10;
+}
+
+#leader-text {
+    font-size: 50px;
+    font-weight: bold;
+    transition: opacity 1s ease-in-out, transform 0.5s ease-in-out;
+    opacity: 0;
+    transform: translateY(20px);
+}
+.first-word {
+    background: rgba(255, 0, 0, 0.3); /* Rouge avec opacité */
+    padding: 5px 10px;
+    border-radius: 5px;
+}
 
 /* Style des messages avec animation */
 .swiper-message {
