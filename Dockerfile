@@ -19,7 +19,7 @@ WORKDIR /var/www/html
 COPY . .
 
 # Installer les dépendances et configurer Laravel
-RUN composer install --no-dev --optimize-autoloader && \
+RUN composer install --no-dev --optimize-autoloader --no-plugins --no-scripts && \
     php artisan config:cache && \
     php artisan route:cache
 
