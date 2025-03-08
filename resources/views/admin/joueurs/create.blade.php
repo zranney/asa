@@ -19,7 +19,7 @@
         </div>
     @endif
 
-    <form action="{{ route('joueurs.store') }}" method="POST" enctype="multipart/form-data">
+    <form action="{{ route('admin.joueurs.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <label for="nom">Nom:</label>
         <input type="text" name="nom" id="nom" value="{{ old('nom') }}" required><br>

@@ -25,8 +25,17 @@ class Kernel extends ConsoleKernel
         require base_path('routes/console.php');
     }
 
+    /**
+     * Liste des middlewares globaux.
+     */
     protected $middleware = [
         \App\Http\Middleware\CleanOldMatches::class,
     ];
-    
+
+    /**
+     * Middlewares pour les routes spécifiques.
+     */
+    protected $routeMiddleware = [
+        'admin.access' => \App\Http\Middleware\AdminAccessMiddleware::class,
+    ];
 }

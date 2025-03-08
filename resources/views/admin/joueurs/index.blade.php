@@ -44,6 +44,6 @@
         </table>
     @endif
     <br>
-    <a href="{{ route('joueurs.create') }}">Ajouter un nouveau joueur</a>
+    <a href="{{ route('admin.joueurs.create') }}">Ajouter un nouveau joueur</a>
 </body>
 </html>

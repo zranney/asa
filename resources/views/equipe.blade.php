@@ -3,7 +3,7 @@
 @section('title', 'ASA - Equipe')
 @section('content')
 <div class="container effectif-container">
-  <div class="effectif-header">
+  <div class="effectif-header"> 
     <h2 class="text-center">
         <i class="fas fa-users"></i> Effectif de l'Équipe
     </h2>

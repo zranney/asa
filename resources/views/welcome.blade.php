@@ -91,16 +91,10 @@ document.addEventListener("DOMContentLoaded", function () {
   <section class="quicklinks" id="quicklinks">
     <div class="quicklinks__container">
         <ul class="quicklinks__menu">
-            <span class="quicklinks__title">Ne manquez pas</span>
-            <li class="quicklinks__item">
+            <span class="quicklinks__title">Abonnez-vous à nos pages pour ne rien manquer !</span>
+            {{-- <li class="quicklinks__item">
                 <a class="quicklinks__link" href="/culers-membership">Devenez Membre</a>
-            </li>
-            <li class="quicklinks__item">
-                <a class="quicklinks__link" href="/boutique">Boutique Officielle</a>
-            </li>
-            <li class="quicklinks__item">
-                <a class="quicklinks__link" href="/billetterie">Billetterie</a>
-            </li>
+            </li> --}}
         </ul>
     </div>
 </section>
