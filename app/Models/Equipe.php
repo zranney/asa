@@ -9,7 +9,7 @@ class Equipe extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['nom']; // Ajoute d'autres champs si nécessaire
+    protected $fillable = ['nom', 'ville', 'stade']; // Ajoute d'autres champs si nécessaire
 
     public function classement()
     {

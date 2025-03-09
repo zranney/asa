@@ -22,7 +22,11 @@
                       @foreach($matchs->reverse()->slice(0,2) as $matchday)
                       <article class="post-inline">
                         <time class="post-inline-time" datetime="{{ \Carbon\Carbon::parse($matchday->date)->translatedFormat('d-m-Y') }}">{{ \Carbon\Carbon::parse($matchday->date)->translatedFormat('d-m-Y') }}</time>
-                        <p class="post-inline-title">{{$matchday->domicile->nom}} <span style="color:yellow;">vs</span> {{$matchday->exterieur->nom}}</p>
+                        <p class="post-inline-title">
+                          {{ $matchday->domicile ? $matchday->domicile->nom : 'Équipe domicile inconnue' }}
+                          <span style="color:yellow;">vs</span>
+                          {{ $matchday->exterieur ? $matchday->exterieur->nom : 'Équipe extérieur inconnue' }}
+                      </p>
                       </article>
                       @endforeach
                     </div>

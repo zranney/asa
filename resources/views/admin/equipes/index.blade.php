@@ -69,7 +69,7 @@
         background-color: #6a11cb;
         color: #fff;
     }
-    
+
     /* Modale de confirmation */
     .modal {
         display: none;
@@ -179,18 +179,18 @@
 <div class="container">
     <div class="row mb-4">
         <div class="col-12 text-center">
-            <h1 class="display-4">Gestion des Joueurs</h1>
-            <p class="lead">Voir, modifier, supprimer ou ajouter des joueurs dans l'équipe.</p>
+            <h1 class="display-4">Gestion des Équipes</h1>
+            <p class="lead">Voir, modifier, supprimer ou ajouter des équipes.</p>
         </div>
     </div>
 
     <!-- Onglets de navigation -->
     <ul class="nav nav-tabs mb-4">
         <li class="nav-item">
-            <a class="nav-link active" id="joueurs-tab" data-bs-toggle="tab" href="#joueurs">Joueurs</a>
+            <a class="nav-link" id="joueurs-tab" data-bs-toggle="tab" href="#joueurs">Joueurs</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" id="equipes-tab" data-bs-toggle="tab" href="#equipes">Équipes</a>
+            <a class="nav-link active" id="equipes-tab" data-bs-toggle="tab" href="#equipes">Équipes</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" id="matchs-tab" data-bs-toggle="tab" href="#matchs">Matchs</a>
@@ -201,38 +201,36 @@
     </ul>
 
     <div class="tab-content">
-        <!-- Onglet Joueurs -->
-        <div class="tab-pane fade show active" id="joueurs">
+        <!-- Onglet Équipes -->
+        <div class="tab-pane fade show active" id="equipes">
             <div class="card">
                 <div class="card-header d-flex justify-content-between align-items-center">
-                    <h4 class="mb-0">Liste des joueurs</h4>
-                    <a href="{{ route('joueurs.create') }}" class="btn btn-success btn-sm">
-                        <i class="fas fa-plus"></i> Ajouter un joueur
+                    <h4 class="mb-0">Liste des équipes</h4>
+                    <a href="{{ route('equipes.create') }}" class="btn btn-success btn-sm">
+                        <i class="fas fa-plus"></i> Ajouter une équipe
                     </a>
                 </div>
                 <div class="card-body">
                     <table class="table table-striped">
                         <thead>
                             <tr>
-                                <th>Nom</th>
-                                <th>Prénom</th>
-                                <th>Poste</th>
-                                <th>Numéro</th>
+                                <th>Nom de l'Équipe</th>
+                                <th>Ville</th>
+                                <th>Stade</th>
                                 <th>Actions</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($joueurs as $joueur)
+                            @foreach ($equipes as $equipe)
                                 <tr>
-                                    <td>{{ $joueur->nom }}</td>
-                                    <td>{{ $joueur->prenom }}</td>
-                                    <td>{{ $joueur->poste }}</td>
-                                    <td>{{ $joueur->numero }}</td>
+                                    <td>{{ $equipe->nom }}</td>
+                                    <td>{{ $equipe->ville }}</td>
+                                    <td>{{ $equipe->stade }}</td>
                                     <td>
-                                        <a href="{{ route('joueurs.edit', $joueur->id) }}" class="btn btn-info btn-sm">
+                                        <a href="{{ route('equipes.edit', $equipe->id) }}" class="btn btn-info btn-sm">
                                             <i class="fas fa-edit"></i> Modifier
                                         </a>
-                                        <form action="{{ route('joueurs.destroy', $joueur->id) }}" method="POST" style="display:inline;" onsubmit="return openConfirmationModal(event, {{ $joueur->id }})">
+                                        <form action="{{ route('equipes.destroy', $equipe->id) }}" method="POST" style="display:inline;" onsubmit="return openConfirmationModal(event, {{ $equipe->id }})">
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="btn btn-danger btn-sm">
@@ -254,7 +252,7 @@
 <div id="confirmationModal" class="modal">
     <div class="modal-content">
         <div class="modal-header">Confirmation</div>
-        <div class="modal-body">Êtes-vous sûr de vouloir supprimer ce joueur ?</div>
+        <div class="modal-body">Êtes-vous sûr de vouloir supprimer cette équipe ?</div>
         <div class="modal-footer">
             <button class="btn-cancel" onclick="closeConfirmationModal()">Annuler</button>
             <button class="btn-delete" id="confirmDeleteBtn">Confirmer</button>
@@ -265,7 +263,7 @@
 <script>
     let deleteFormReference = null;
 
-    function openConfirmationModal(event, joueurId) {
+    function openConfirmationModal(event, equipeId) {
         event.preventDefault();
         deleteFormReference = event.target.closest('form');
         const modal = document.getElementById('confirmationModal');

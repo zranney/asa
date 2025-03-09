@@ -92,8 +92,8 @@
                 <div class="card-body">
                     <h5 class="card-title">Gérer les matchs</h5>
                     <p class="card-text">Créer et suivre les matchs.</p>
-                    <a href="" class="btn btn-light"><i class="fas fa-plus"></i> Ajouter</a>
-                    <a href="" class="btn btn-secondary"><i class="fas fa-eye"></i> Voir tout</a>
+                    <a href="{{ route('equipes.index') }}" class="btn btn-light"><i class="fas fa-plus"></i> Ajouter</a>
+                    <a href="{{ route('equipes.index') }}" class="btn btn-secondary"><i class="fas fa-eye"></i> Voir tout</a>
                 </div>
             </div>
         </div>
@@ -118,8 +118,8 @@
                 <div class="card-body">
                     <h5 class="card-title">Gérer les équipes</h5>
                     <p class="card-text">Ajouter, modifier ou supprimer des équipes.</p>
-                    <a href="" class="btn btn-light"><i class="fas fa-plus"></i> Ajouter</a>
-                    <a href="" class="btn btn-secondary"><i class="fas fa-eye"></i> Voir tout</a>
+                    <a href="{{ route('equipes.create') }}" class="btn btn-light"><i class="fas fa-plus"></i> Ajouter</a>
+                    <a href="{{ route('equipes.index') }}" class="btn btn-secondary"><i class="fas fa-eye"></i> Voir tout</a>
                 </div>
             </div>
         </div>

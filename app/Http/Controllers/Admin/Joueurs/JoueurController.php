@@ -87,9 +87,12 @@ class JoueurController extends Controller
      */
     public function destroy(Joueur $joueur)
     {
-        $joueur->delete();
-
-        return redirect()->route('joueurs.index')->with('success', 'Joueur supprimé avec succès');
+        try {
+            $joueur->delete();
+            return redirect()->route('joueurs.index')->with('success', 'Joueur supprimé avec succès.');
+        } catch (\Exception $e) {
+            return redirect()->route('joueurs.index')->with('error', 'Erreur lors de la suppression du joueur.');
+        }
   
     }
 }

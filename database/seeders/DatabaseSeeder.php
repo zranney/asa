@@ -29,10 +29,6 @@ class DatabaseSeeder extends Seeder
         Galerie::factory(25)->create();
         CalendrierEvent::factory(10)->create();
         User::factory(5)->create();
-
-        Admin::create([
-            'email' => 'admin@example.com',
-            'password' => Hash::make('motdepasse'),
-        ]);
+        
     }
 }
